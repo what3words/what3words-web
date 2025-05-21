@@ -97,14 +97,17 @@ jobs:
           # we create newline separated raw strings to map iterate with xargs that runs the npm publish command: https://stackoverflow.com/a/50845457
           packageNames=$(jq -rc 'keys | join("\n")' <<< '${{needs.prepare-packages.outputs.checked-package-versions}}')
           echo $packageNames | xargs -n 1 npm publish -w
+        env:
+          NODE_OPTIONS: "--max_old_space_size=4096"
+          NODE_AUTH_TOKEN: ${{ env.NPM_TOKEN }}
+
+      - name: Publish packages status
+        run: |
           echo "### Package(s) published! :gift:" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "#### Published package(s)" >> $GITHUB_STEP_SUMMARY
           packageUrls=$(jq -rc '. as $o | with_entries(.key |= "[" + . + "](https://www.npmjs.com/package/" + . + "/v/" + $o[.].committedVersion + ")") | keys | join("\n")' <<< '${{needs.prepare-packages.outputs.checked-package-versions}}')
           echo $packageUrls | xargs -n 1 echo >> $GITHUB_STEP_SUMMARY
-        env:
-          NODE_OPTIONS: "--max_old_space_size=4096"
-          NODE_AUTH_TOKEN: ${{ env.NPM_TOKEN }}
 
   upload-distribution:
     runs-on: ubuntu-latest
@@ -172,6 +175,9 @@ jobs:
           npm run --workspace=${{env.DISTRIBUTION_PACKAGE}} build
           echo "::notice title=Uploading distributions::sources_path=${{needs.prepare-packages.outputs.dist-directory}}, target_path=${{ env.AWS_S3_DIRECTORY }}"
           aws s3 cp . s3://${{ env.AWS_S3_BUCKET }}/${{ env.AWS_S3_DIRECTORY }}@${{needs.prepare-packages.outputs.dist-committed-version}}/ --recursive --exclude "*" --include "dist/*" --include "loader/*"
+
+      - name: Upload distribution status
+        run: |
           echo "### Distribution uploaded! :rocket:" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "Package: ${{env.DISTRIBUTION_PACKAGE}}@${{needs.prepare-packages.outputs.dist-committed-version}}" >> $GITHUB_STEP_SUMMARY
