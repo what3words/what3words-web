@@ -1,0 +1,8 @@
+{
+  "correction_message": "こちらをお探しですか？",
+  "distance": "${PARAM} km",
+  "error_message": "エラーが発生しました。しばらくしてからもう一度お試しください。",
+  "input_hint": "例：///まてる。おおきめ。こっき",
+  "invalid_address_message": "有効な3ワードアドレスが見つかりません",
+  "voice_placeholder": "3ワードアドレスを言ってください"
+}

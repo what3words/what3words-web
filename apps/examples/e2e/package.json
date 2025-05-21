@@ -1,0 +1,26 @@
+{
+  "name": "examples-e2e",
+  "version": "5.0.1",
+  "private": "true",
+  "description": "Test harness for what3Words web-components apps",
+  "scripts": {
+    "clean": "npx del node_modules",
+    "cy": "cypress",
+    "cy:test-app": "start-server-and-test \"npm --workspace=${npm_config_application} run dev\" http://localhost:3000 \"npm run cy run -- --spec */**/frameworks/${npm_config_spec}.spec.ts\"",
+    "cy:test-app:open": "start-server-and-test \"npm --workspace=${npm_config_application} run dev\" http://localhost:3000 \"npm run cy open\"",
+    "dev": "npm run cy open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@tsconfig/cypress": "^1.0.2",
+    "@types/chance": "^1.1.6",
+    "@types/node": "^22.10.2",
+    "@what3words/javascript-loader": "*",
+    "chance": "^1.1.12",
+    "cypress": "^13.16.1",
+    "start-server-and-test": "^2.0.9",
+    "typescript": "^5.7.2"
+  }
+}

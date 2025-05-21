@@ -1,0 +1,14 @@
+{
+  "extends": "@tsconfig/recommended/tsconfig.json",
+  "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "ES2015"],
+    "removeComments": true,
+    "module": "ES2015",
+    "moduleResolution": "bundler",
+    "outDir": "./dist",
+    "isolatedModules": false,
+    "declaration": true
+  },
+  "include": ["./src/**/*"],
+  "exclude": ["node_modules", "**/*.d.ts", "**/dist/*"]
+}

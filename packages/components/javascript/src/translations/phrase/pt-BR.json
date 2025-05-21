@@ -1,0 +1,8 @@
+{
+  "correction_message": "Você quis dizer?",
+  "distance": "${PARAM} km",
+  "error_message": "Occoreu um errro. Por favor, tente novamente",
+  "input_hint": "ex. ///votam.exclui.avalia",
+  "invalid_address_message": "Endereço de 3 palavras válido não encontrado",
+  "voice_placeholder": "Fale um endereço de 3 palavras"
+}

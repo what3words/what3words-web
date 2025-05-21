@@ -1,0 +1,8 @@
+{
+  "correction_message": "آیا منظورت این بود؟",
+  "distance": "${PARAM} کیلومتر",
+  "error_message": "خطایی رخ داده است. لطفاً بعداً دوباره آزمایش کن.",
+  "input_hint": "مثال: ///بگویند.فواره.اهلی",
+  "invalid_address_message": "هیچ نشانی سه‌کلمه‌ای معتبری در what3words پیدا نشد.",
+  "voice_placeholder": "یک نشانی سه‌کلمه‌ای بگو!"
+}

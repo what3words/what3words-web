@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<what3words-autosuggest /> renders 1`] = `
+<what3words-autosuggest class="default">
+  <!---->
+  <div class="default what3words-autosuggest">
+    <div class="what3words-autosuggest-input-wrapper" data-testid="input-wrapper">
+      <input name="what3words_3wa" placeholder="e.g. ///lock.spout.radar" value="undefined">
+      <span class="what3words-autosuggest-state" data-testid="state"></span>
+    </div>
+    <div class="hidden what3words-autosuggest-suggestions" data-testid="suggestions-wrapper">
+      <div class="what3words-autosuggest-items"></div>
+    </div>
+  </div>
+</what3words-autosuggest>
+`;
+
+exports[`<what3words-autosuggest /> renders when wrapped an existing input element 1`] = `
+<what3words-autosuggest class="default">
+  <!---->
+  <div class="default what3words-autosuggest">
+    <div class="what3words-autosuggest-input-wrapper" data-testid="input-wrapper">
+      <input name="what3words_3wa" placeholder="e.g. ///lock.spout.radar" type="myinput" value="undefined">
+      <span class="what3words-autosuggest-state" data-testid="state"></span>
+    </div>
+    <div class="hidden what3words-autosuggest-suggestions" data-testid="suggestions-wrapper">
+      <div class="what3words-autosuggest-items"></div>
+    </div>
+  </div>
+</what3words-autosuggest>
+`;
+
+exports[`<what3words-autosuggest /> when localised accepts language in uppercase 1`] = `
+<what3words-autosuggest class="default">
+  <!---->
+  <div class="default what3words-autosuggest">
+    <div class="what3words-autosuggest-input-wrapper" data-testid="input-wrapper">
+      <input name="what3words_3wa" placeholder="p.es. ///mandali.avvera.sarò" value="undefined">
+      <span class="what3words-autosuggest-state" data-testid="state"></span>
+    </div>
+    <div class="hidden what3words-autosuggest-suggestions" data-testid="suggestions-wrapper">
+      <div class="what3words-autosuggest-items"></div>
+    </div>
+  </div>
+</what3words-autosuggest>
+`;
+
+exports[`<what3words-autosuggest /> when localised displays placeholder text as english if language is invalid 1`] = `
+<what3words-autosuggest class="default">
+  <!---->
+  <div class="default what3words-autosuggest">
+    <div class="what3words-autosuggest-input-wrapper" data-testid="input-wrapper">
+      <input name="what3words_3wa" placeholder="e.g. ///lock.spout.radar" value="undefined">
+      <span class="what3words-autosuggest-state" data-testid="state"></span>
+    </div>
+    <div class="hidden what3words-autosuggest-suggestions" data-testid="suggestions-wrapper">
+      <div class="what3words-autosuggest-items"></div>
+    </div>
+  </div>
+</what3words-autosuggest>
+`;
+
+exports[`<what3words-autosuggest /> when localised displays placeholder text as italian 1`] = `
+<what3words-autosuggest class="default">
+  <!---->
+  <div class="default what3words-autosuggest">
+    <div class="what3words-autosuggest-input-wrapper" data-testid="input-wrapper">
+      <input name="what3words_3wa" placeholder="p.es. ///mandali.avvera.sarò" value="undefined">
+      <span class="what3words-autosuggest-state" data-testid="state"></span>
+    </div>
+    <div class="hidden what3words-autosuggest-suggestions" data-testid="suggestions-wrapper">
+      <div class="what3words-autosuggest-items"></div>
+    </div>
+  </div>
+</what3words-autosuggest>
+`;
+
+exports[`<what3words-autosuggest /> when variant is provided renders 1`] = `
+<what3words-autosuggest class="inherit" variant="inherit">
+  <!---->
+  <div class="inherit what3words-autosuggest">
+    <div class="what3words-autosuggest-input-wrapper" data-testid="input-wrapper">
+      <input name="what3words_3wa" placeholder="e.g. ///lock.spout.radar" value="undefined">
+      <span class="what3words-autosuggest-state" data-testid="state"></span>
+    </div>
+    <div class="hidden what3words-autosuggest-suggestions" data-testid="suggestions-wrapper">
+      <div class="what3words-autosuggest-items"></div>
+    </div>
+  </div>
+</what3words-autosuggest>
+`;

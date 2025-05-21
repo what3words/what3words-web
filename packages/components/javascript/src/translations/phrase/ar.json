@@ -1,0 +1,8 @@
+{
+  "correction_message": "هل تعني؟",
+  "distance": "${PARAM} كم",
+  "error_message": "حدث خطأ، يُرجى إعادة المحاولة لاحقًا",
+  "input_hint": "مثال: ///تنافس.شواطئ.أنام",
+  "invalid_address_message": "لم يتم العثور على عنوان من ٣ كلمات صالح",
+  "voice_placeholder": "انطق عنوان من ۳ كلمات..."
+}

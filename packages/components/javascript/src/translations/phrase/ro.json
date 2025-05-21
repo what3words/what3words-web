@@ -1,0 +1,8 @@
+{
+  "correction_message": "Voiai să spui?",
+  "distance": "${PARAM} km",
+  "error_message": "A apărut o eroare. Te rugăm să încerci din nou mai târziu",
+  "input_hint": "de ex. ///margine.murătură.dovadă",
+  "invalid_address_message": "Nu a fost găsită nicio adresă validă what3words",
+  "voice_placeholder": "Spune o adresă de 3 cuvinte..."
+}

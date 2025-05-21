@@ -1,0 +1,8 @@
+{
+  "correction_message": "Mente du: ?",
+  "distance": "${PARAM} km",
+  "error_message": "Det har oppstått en feil. Vennligst prøv igjen senere.",
+  "input_hint": "f.eks. ///donert.saget.kjøpte",
+  "invalid_address_message": "Finner ingen gyldig 3-ordsadresse",
+  "voice_placeholder": "Si en 3-ordsadresse"
+}

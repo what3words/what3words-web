@@ -1,0 +1,8 @@
+{
+  "correction_message": "您指的是这个位置吗？",
+  "distance": "${PARAM}千米",
+  "error_message": "发生错误。请稍后再试",
+  "input_hint": "例如 ///对流.门票.情感",
+  "invalid_address_message": "无法找到有效的三词地址",
+  "voice_placeholder": "说出一个三词地址..."
+}

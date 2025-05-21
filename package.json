@@ -1,0 +1,40 @@
+{
+  "name": "what3words-web-samples",
+  "version": "0.0.0",
+  "description": "A usage resource for what3words components",
+  "repository": {
+    "url": "https://github.com/what3words/what3words-web"
+  },
+  "main": "index.js",
+  "private": "true",
+  "engines": {
+    "npm": ">=10"
+  },
+  "scripts": {
+    "build:packages": "npm --workspace=packages/shared/** --workspace=packages/components/javascript --workspace=packages/components/react --workspace=packages/components/vue --workspace=packages/components/angular --if-present run build",
+    "postbuild:packages": "npm --workspace=packages/shared/** --workspace=packages/components/javascript --workspace=packages/components/react --workspace=packages/components/vue --workspace=packages/components/angular --if-present run format -- --write",
+    "clean": "npm run --workspaces clean --if-present",
+    "clean:workspace": "npx del node_modules ./wrappers/.phrase",
+    "get:workspace": "npm query :root | jq 'map({name: .name, path: .path, version: .version})'",
+    "bump:version": "npm --workspace=packages/shared/** --workspace=packages/components/javascript --workspace=packages/components/react --workspace=packages/components/vue --workspace=apps/** version $npm_config_release --no-git-tag-version --allow-same-version --preid alpha && npm --prefix packages/components/angular/components version $npm_config_release --no-git-tag-version --allow-same-version --preid alpha && npm --prefix packages/components/angular/package version $npm_config_release --no-git-tag-version --allow-same-version --preid alpha",
+    "postbump:version": "npm run build:packages",
+    "test": "./scripts/act-run.sh --job cypress-e2e"
+  },
+  "workspaces": [
+    "packages/shared/javascript-cli",
+    "packages/shared/javascript-loader",
+    "packages/components/javascript",
+    "packages/components/angular",
+    "packages/components/angular/package",
+    "packages/components/react",
+    "packages/components/vue",
+    "apps/**"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "del-cli": "^6.0.0",
+    "lefthook": "^1.11.13"
+  }
+}

@@ -1,0 +1,18 @@
+extends:
+  - "apps/*/.lefthook.yml"
+  - "packages/*/.lefthook.yml"
+  - "apps/*/*/.lefthook.yml"
+  - "packages/*/*/.lefthook.yml"
+
+pre-commit:
+  parallel: true
+  commands:
+    "format(docs)":
+      root: "docs"
+      glob: "*.{md}"
+      run: npm exec -- prettier --check --log-level warn {staged_files}
+
+    "format(apps)":
+      root: "apps"
+      glob: "*.{md}"
+      run: npm exec -- prettier --check --log-level warn {staged_files}

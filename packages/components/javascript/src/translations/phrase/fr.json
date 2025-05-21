@@ -1,0 +1,8 @@
+{
+  "correction_message": "C'est bien cela ?",
+  "distance": "${PARAM} km",
+  "error_message": "Une erreur s'est produite. Veuillez réessayer plus tard",
+  "input_hint": "p. ex. : ///pochade.nantir.courge",
+  "invalid_address_message": "Aucune adresse de 3 mots valide trouvée",
+  "voice_placeholder": "Dites une adresse de 3 mots..."
+}

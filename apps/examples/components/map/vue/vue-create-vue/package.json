@@ -1,0 +1,29 @@
+{
+  "name": "components-map-vue-create-vue",
+  "version": "5.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "clean": "npx del node_modules",
+    "dev": "vite",
+    "build": "run-p type-check \"build-only {@}\" --",
+    "preview": "vite preview",
+    "build-only": "vite build",
+    "type-check": "vue-tsc --build --force"
+  },
+  "dependencies": {
+    "@what3words/javascript-loader": "*",
+    "@what3words/vue-components": "*",
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@tsconfig/node20": "^20.1.4",
+    "@types/node": "^20.17.10",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "@vue/tsconfig": "^0.5.1",
+    "npm-run-all2": "^6.2.6",
+    "typescript": "~5.4.5",
+    "vite": "^5.4.11",
+    "vue-tsc": "^2.1.10"
+  }
+}

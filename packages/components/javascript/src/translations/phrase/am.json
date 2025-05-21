@@ -1,0 +1,8 @@
+{
+  "correction_message": "ማለትዎ ነው?",
+  "distance": "${PARAM} ኪ.ሜ",
+  "error_message": "ስህተት ተፈጥሯል፡፡ እባክዎን እንደገና ይሞክሩ",
+  "input_hint": "ለምሳሌ ///ዘይት.ያማሩ.አወቁ",
+  "invalid_address_message": "ትክክለኛ የ3 ቃላት አድራሻ አልተገኘም",
+  "voice_placeholder": "ባለ3 ቃላት አድራሻ ይናገሩ..."
+}

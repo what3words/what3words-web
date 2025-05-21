@@ -1,0 +1,8 @@
+{
+  "correction_message": "Apakah maksud Anda?",
+  "distance": "${PARAM} km",
+  "error_message": "Terjadi kesalahan. Mohon coba beberapa saat lagi",
+  "input_hint": "misalnya: ///kesenian.pemirsa.belang",
+  "invalid_address_message": "Alamat dalam 3 kata tidak ditemukan",
+  "voice_placeholder": "Ucapkan alamat dalam format 3 kata"
+}

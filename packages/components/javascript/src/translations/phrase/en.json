@@ -1,0 +1,11 @@
+{
+  "correction_message": "Did you mean?",
+  "distance": "${PARAM} km",
+  "error_message": "An error occurred. Please try again later",
+  "error_quota": "Usage limit exceeded. Please review higher plans.",
+  "input_hint": "e.g. ///lock.spout.radar",
+  "invalid_address_message": "No valid what3words address found",
+  "invalid_suggestions": "No suggestions found. Please try again.",
+  "nearest_place": "near ${PARAM}",
+  "voice_placeholder": "Say a 3 word address…"
+}

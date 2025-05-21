@@ -1,0 +1,16 @@
+{
+  "files": [
+    {
+      "path": "./dist/what3words/what3words.esm.js",
+      "maxSize": "1.8 kB"
+    },
+    {
+      "path": "./dist/components/index.js",
+      "maxSize": "1.8 kB"
+    },
+    {
+      "path": "./loader/index.js",
+      "maxSize": "300 B"
+    }
+  ]
+}

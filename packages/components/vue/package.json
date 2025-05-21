@@ -1,0 +1,32 @@
+{
+  "name": "@what3words/vue-components",
+  "version": "5.0.1",
+  "private": false,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prepublishOnly": "npx --package-path=$PWD --strict=false publint-lint-package",
+    "clean": "npx del node_modules",
+    "prebuild": "npx del dist",
+    "build": "npm run tsc",
+    "tsc": "tsc -b . -f"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@what3words/javascript-components": "*"
+  },
+  "devDependencies": {
+    "@what3words/javascript-cli": "*",
+    "@tsconfig/recommended": "^1.0.8",
+    "typescript": "^5.4.5",
+    "vue": "3"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

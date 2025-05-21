@@ -1,0 +1,153 @@
+<!doctype html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stencil Component Starter</title>
+
+    <script type="module" src="/build/what3words.esm.js"></script>
+    <script nomodule src="/build/what3words.js"></script>
+  </head>
+  <body style="padding-top: 5em">
+    <what3words-address></what3words-address>
+    <br />
+    <what3words-autosuggest api_key="">
+      <input type="text" placeholder="Search for your business" />
+    </what3words-autosuggest>
+    <br />
+    <what3words-notes api-key="">
+      <label slot="label"><b class="text-xl">Delivery instructions</b></label>
+      <textarea
+        slot="input"
+        class="w-80 p-3 border border-gray-300 rounded-md"
+        name="delivery-instructions"
+        placeholder="Type delivery instructions with your what3words address"
+        autocomplete="off"
+      ></textarea>
+      <div slot="tooltip" class="flex flex-col">
+        <h1 class="text-lg bold">Custom title</h1>
+        <p class="text-sm">This is a custom content</p>
+      </div>
+    </what3words-notes>
+    <br />
+    <what3words-notes api-key="">
+      <label slot="label"><b class="text-xl">Delivery instructions</b></label>
+      <input
+        slot="input"
+        class="w-full p-2 border border-gray-300 rounded-md"
+        name="delivery-instructions"
+        placeholder="Type delivery instructions with your what3words address"
+        autocomplete="off"
+      />
+    </what3words-notes>
+    <br />
+    <!--  TODO: marker_icon should point to w3w hosted asset -->
+    <what3words-map
+      api_key=""
+      map_api_key=""
+      zoom="8"
+      selected_zoom="20"
+      lng="-0.114637"
+      lat="51.454843"
+      search_control_position="2"
+      map_type_control
+      zoom_control
+      words="filled.count.soap"
+      fullscreen_control
+      fullscreen_control_position="3"
+      current_location_control_position="9"
+      disable_default_ui
+      marker_icon="https://uploads.codesandbox.io/uploads/user/f46b5c93-0a1e-4bce-a99b-9a25b8ce15b9/tWGo-redmarker.png"
+      language="de"
+    >
+      <div slot="map" id="w3w-map" style="height: 900px"></div>
+      <div slot="search-control" style="margin: 0.5rem 0px 0px 0.5rem">
+        <what3words-autosuggest>
+          <input
+            type="text"
+            style="width: 20em"
+            placeholder="Search for your business"
+            autosuggest="off"
+            autocomplete="off"
+          />
+        </what3words-autosuggest>
+      </div>
+      <div slot="current-location-control">
+        <button
+          style="
+            padding: 0;
+            margin: 0px;
+            border: none;
+            border-radius: 50%;
+            background: none;
+          "
+          title="current-location-control-button"
+        >
+          <svg
+            width="58"
+            height="58"
+            viewBox="0 0 58 58"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g filter="url(#filter0_d_7854_8356)">
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M29 53C42.2548 53 53 42.2548 53 29C53 15.7452 42.2548 5 29 5C15.7452 5 5 15.7452 5 29C5 42.2548 15.7452 53 29 53Z"
+                fill="white"
+              />
+              <path
+                d="M31.5 29.0007C31.5 30.3797 30.3807 31.5 29 31.5C27.6193 31.5 26.5 30.3797 26.5 29.0007C26.5 27.6201 27.6195 26.5 29 26.5C30.3805 26.5 31.5 27.6201 31.5 29.0007Z"
+                fill="#00AFFF"
+                stroke="#00AFFF"
+              />
+              <path
+                d="M29 33.6667V37M35.2902 29.0865C35.2902 32.5841 32.4548 35.4195 28.9572 35.4195C25.4589 35.4195 22.6235 32.5841 22.6235 29.0865C22.6235 25.5883 25.4589 22.7529 28.9572 22.7529C32.4548 22.7529 35.2902 25.5883 35.2902 29.0865ZM21 29H24.3333H21ZM33.6667 29H37H33.6667ZM29 21V24.3333V21Z"
+                stroke="#00AFFF"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </g>
+            <defs>
+              <filter
+                id="filter0_d_7854_8356"
+                x="0"
+                y="0"
+                width="58"
+                height="58"
+                filterUnits="userSpaceOnUse"
+                color-interpolation-filters="sRGB"
+              >
+                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feColorMatrix
+                  in="SourceAlpha"
+                  type="matrix"
+                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                  result="hardAlpha"
+                />
+                <feOffset />
+                <feGaussianBlur stdDeviation="2.5" />
+                <feColorMatrix
+                  type="matrix"
+                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"
+                />
+                <feBlend
+                  mode="normal"
+                  in2="BackgroundImageFix"
+                  result="effect1_dropShadow_7854_8356"
+                />
+                <feBlend
+                  mode="normal"
+                  in="SourceGraphic"
+                  in2="effect1_dropShadow_7854_8356"
+                  result="shape"
+                />
+              </filter>
+            </defs>
+          </svg>
+        </button>
+      </div>
+    </what3words-map>
+  </body>
+</html>

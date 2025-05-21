@@ -1,0 +1,8 @@
+{
+  "correction_message": "Mysleli ste toto?",
+  "distance": "${PARAM} km",
+  "error_message": "Vyskytla sa chyba, skúste to neskôr.",
+  "input_hint": "napr. ///dotknúť.cenové.tečúce",
+  "invalid_address_message": "Nenašla sa platná 3-slovná adresa",
+  "voice_placeholder": "Vyslovte 3-slovnú adresu…"
+}

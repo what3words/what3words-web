@@ -1,0 +1,8 @@
+{
+  "correction_message": "ನೀವು ಹೀಗೆ ಭಾವಿಸಿದಿರಾ?",
+  "distance": "${PARAM} ಕಿ.ಮೀ.",
+  "error_message": "ದೋಷ ಸಂಭವಿಸಿದೆ. ದಯವಿಟ್ಟು ನಂತರ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ",
+  "input_hint": "ಉದಾ. ///ನಗುವಿಗಾಗಿ.ತಡೆದು.ಓಡಾಡು",
+  "invalid_address_message": "ಯಾವುದೇ ಮಾನ್ಯ what3words ವಿಳಾಸ ಕಂಡುಬಂದಿಲ್ಲ",
+  "voice_placeholder": "ಯಾವುದೇ 3 ಪದಗಳ ವಿಳಾಸವನ್ನು ಹೇಳಿ..."
+}

@@ -1,0 +1,55 @@
+pre-commit:
+  parallel: true
+  commands:
+    "format(packages/components)":
+      root: "packages/components"
+      glob: "*.{md}"
+      run: npm exec -- prettier --check --log-level warn {staged_files}
+
+    "tsc(@what3words/javascript-components)":
+      # The tsc command will fail to find the project file w/o workspace scoping the npm exec command
+      run: npm exec --workspace=@what3words/javascript-components -- tsc --project ./tsconfig.json --noEmit
+    "lint(@what3words/javascript-components)":
+      root: "packages/components/javascript"
+      glob: "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx}"
+      run: npm exec -- eslint --max-warnings=0 --report-unused-disable-directives --no-warn-ignored {staged_files}
+    "format(@what3words/javascript-components)":
+      root: "packages/components/javascript"
+      glob: "*.{js,ts,jsx,tsx,yml,json,md}"
+      run: npm exec -- prettier --check --log-level warn {staged_files}
+
+    "tsc(@what3words/angular-components)":
+      # The tsc command will fail to find the project file w/o workspace scoping the npm exec command
+      run: npm exec --workspace=angular-workspace -- tsc --project ./tsconfig.json --noEmit
+    "lint(@what3words/angular-components)":
+      root: "packages/components/angular"
+      glob: "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx}"
+      run: npm exec -- eslint --max-warnings=0 --report-unused-disable-directives --no-warn-ignored {staged_files}
+    "format(@what3words/angular-components)":
+      root: "packages/components/angular"
+      glob: "*.{js,ts,jsx,tsx,yml,json,md}"
+      run: npm exec -- prettier --check --log-level warn {staged_files}
+
+    "tsc(@what3words/vue-components)":
+      # The tsc command will fail to find the project file w/o workspace scoping the npm exec command
+      run: npm exec --workspace=@what3words/vue-components -- tsc --project ./tsconfig.json --noEmit
+    "lint(@what3words/vue-components)":
+      root: "packages/components/vue"
+      glob: "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx}"
+      run: npm exec -- eslint --max-warnings=0 --report-unused-disable-directives --no-warn-ignored {staged_files}
+    "format(@what3words/vue-components)":
+      root: "packages/components/vue"
+      glob: "*.{js,ts,jsx,tsx,yml,json,md}"
+      run: npm exec -- prettier --check --log-level warn {staged_files}
+
+    "tsc(@what3words/react-components)":
+      # The tsc command will fail to find the project file w/o workspace scoping the npm exec command
+      run: npm exec --workspace=@what3words/vue-components -- tsc --project ./tsconfig.json --noEmit
+    "lint(@what3words/react-components)":
+      root: "packages/components/vue"
+      glob: "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx}"
+      run: npm exec -- eslint --max-warnings=0 --report-unused-disable-directives --no-warn-ignored {staged_files}
+    "format(@what3words/react-components)":
+      root: "packages/components/vue"
+      glob: "*.{js,ts,jsx,tsx,yml,json,md}"
+      run: npm exec -- prettier --check --log-level warn {staged_files}

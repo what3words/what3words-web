@@ -1,0 +1,46 @@
+@import "./base.css";
+
+body {
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+input {
+  width: 14rem;
+  margin: 10px;
+}
+
+[slot="map"] {
+  height: 60vh;
+  width: 60vw;
+  margin: 0.5rem;
+}
+[slot="search-control"] {
+  margin: 0.5rem;
+  width: 29em;
+}
+[slot="current-location-control"] {
+  margin-bottom: 1.5rem;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  color: white;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  background-color: #5c8387;
+}
+button:hover {
+  border-color: #a0c9cd;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}

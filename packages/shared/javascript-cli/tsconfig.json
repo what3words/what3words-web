@@ -1,0 +1,21 @@
+{
+  "extends": "@tsconfig/recommended/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "module": "node16",
+    "moduleResolution": "node16",
+    "forceConsistentCasingInFileNames": true,
+    "target": "es2017",
+    "noUnusedLocals": false,
+    "noUnusedParameters": true,
+    "noEmit": false,
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "declaration": true
+  },
+  "include": ["*.ts", "src/*"],
+  "exclude": ["node_modules"]
+}

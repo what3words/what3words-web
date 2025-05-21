@@ -1,0 +1,8 @@
+{
+  "correction_message": "Ste morda mislili ...?",
+  "distance": "${PARAM} km",
+  "error_message": "Prišlo je do napake. Prosimo, poskusite kasneje.",
+  "input_hint": "npr. ///lock.spout.radar",
+  "invalid_address_message": "Ne najdem veljavnega what3words naslova.",
+  "voice_placeholder": "Izgovorite what3words naslov ..."
+}

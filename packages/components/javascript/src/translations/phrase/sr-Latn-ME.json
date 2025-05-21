@@ -1,0 +1,8 @@
+{
+  "correction_message": "Da li ste mislili?",
+  "distance": "${PARAM} km",
+  "error_message": "Došlo je do greške. Molimo, pokušajte kasnije",
+  "input_hint": "npr. ///usluge.izvođači.brižna",
+  "invalid_address_message": "Nije pronađena važeća what3words adresa",
+  "voice_placeholder": "Recite adresu od 3 riječi..."
+}

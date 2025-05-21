@@ -1,0 +1,8 @@
+{
+  "correction_message": "ਤੁਸੀਂ ਇਹ ਲੱਭ ਰਹੇ?",
+  "distance": "${PARAM} ਕਿ.ਮੀ.\n\n",
+  "error_message": "ਕੋਈ ਗੜਬੜ ਹੋਈ। ਬਾਅਦ 'ਚ ਮੁੜ-ਕੋਸ਼ਿਸ਼ ਕਰੋ",
+  "input_hint": "ਜਿਵੇਂ ///ਕਵੀਆਂ.ਰੁਕਣਾ.ਘੁੰਮਦੇ",
+  "invalid_address_message": "ਕੋਈ ਸਹੀ what3words ਪਤਾ ਨਹੀਂ ਮਿਲਿਆ",
+  "voice_placeholder": "ਕੋਈ 3 ਸ਼ਬਦੀ ਪਤਾ ਬੋਲੋ…"
+}

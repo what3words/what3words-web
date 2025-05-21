@@ -1,0 +1,49 @@
+#!/bin/bash
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+
+PHRASE_VERSION="2.31.0"
+
+if [ -z ${PHRASE_BIN_PATH+x} ]; then
+	PHRASE_BIN_PATH="$DIR/.phrase";
+fi
+
+unameStr=$(uname -a)
+
+platform='unknown'
+if [[ "$unameStr" =~ 'Linux' ]]; then
+   platform='linux'
+elif [[ "$unameStr" =~ 'Darwin' ]]; then
+   platform='macosx'
+fi
+
+architecture='unknown'
+if [[ "$unameStr" =~ 'arm64' ]]; then
+   architecture='arm64'
+elif [[ "$unameStr" =~ 'amd64' ]]; then
+   architecture='amd64'
+fi
+
+PHRASE_URL="https://github.com/phrase/phrase-cli/releases/download/$PHRASE_VERSION/phrase_${platform}_${architecture}.tar.gz"
+
+PHRASE_PATH="$PHRASE_BIN_PATH/$PHRASE_VERSION"
+PHRASE_CMD="$PHRASE_PATH/phrase"
+PHRASE_DIR="phrase_${platform}_${architecture}"
+
+if ! type "$PHRASE_CMD" > /dev/null 2>&1; then
+	echo "Downloading $PHRASE_URL"
+	mkdir -p "$PHRASE_PATH/$PHRASE_DIR"
+	curl -L -s "$PHRASE_URL" -o $PHRASE_PATH/$PHRASE_DIR/phrase.tar.gz
+
+	echo "Unpacking phrase archive"
+  cd $PHRASE_PATH && tar -xzf $PHRASE_DIR/phrase.tar.gz phrase && cd - 
+  echo "Cleaning up directory"
+	rm -rf "${PHRASE_PATH:?}/${PHRASE_DIR:?}" "${PHRASE_PATH:?}/phrase.tar.gz"
+  echo "Setting binary permissions"
+  chmod +x "$PHRASE_PATH/phrase"
+fi
+
+# Execute the phrase binary with passed arguments if they exist
+if [ $# -gt 0 ]; then
+  $PHRASE_CMD "$@"
+fi

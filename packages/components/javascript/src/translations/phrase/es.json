@@ -1,0 +1,8 @@
+{
+  "correction_message": "¿Querías decir?",
+  "distance": "${PARAM} km",
+  "error_message": "Ha ocurrido un error. Vuelve a intentarlo más tarde",
+  "input_hint": "Por ejemplo, ///pare.relee.opino",
+  "invalid_address_message": "No se han encontrado direcciones de 3 palabras válidas",
+  "voice_placeholder": "Di una dirección de 3 palabras..."
+}

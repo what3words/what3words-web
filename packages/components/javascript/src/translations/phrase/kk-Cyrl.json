@@ -1,0 +1,8 @@
+{
+  "correction_message": "Іздегеніңіз осы ма?",
+  "distance": "${PARAM} км",
+  "error_message": "Қате шықты. Кейін қайталап көріңіз",
+  "input_hint": "мысалы: ///жүзушілер.бағалас.еріткіш",
+  "invalid_address_message": "Мұндай what3words мекенжайы табылмады",
+  "voice_placeholder": "3 сөзді мекенжайды айтыңыз…"
+}

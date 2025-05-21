@@ -1,0 +1,36 @@
+{
+  "name": "angular-workspace",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "clean": "npx del .angular node_modules package/!package.json",
+    "ng": "ng",
+    "start": "ng serve",
+    "prebuild": "npx del package/!package.json",
+    "build": "ng build",
+    "prepublishOnly": "npx --package-path=$PWD/package --strict=false publint-lint-package",
+    "watch": "ng build --watch --configuration development"
+  },
+  "dependencies": {
+    "@angular/animations": "^18.1.2",
+    "@angular/common": "^18.1.2",
+    "@angular/compiler": "^18.1.2",
+    "@angular/core": "^18.1.2",
+    "@angular/forms": "^18.1.2",
+    "@angular/platform-browser": "^18.1.2",
+    "@angular/platform-browser-dynamic": "^18.1.2",
+    "@angular/router": "^18.1.2",
+    "@what3words/javascript-components": "*",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.14.8"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^18.1.2",
+    "@angular/cli": "^18.1.2",
+    "@angular/compiler-cli": "^18.1.2",
+    "@what3words/javascript-cli": "*",
+    "ng-packagr": "^18.1.0",
+    "typescript": ">=5.4.0 <5.6.0"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "correction_message": "Mente du?",
+  "distance": "${PARAM} km",
+  "error_message": "Der opstod en fejl. Prøv igen senere.",
+  "input_hint": "fx ///opsøge.sangbogen.gaflerne",
+  "invalid_address_message": "Ingen what3words-adresse fundet",
+  "voice_placeholder": "Sig en 3-ords-adresse"
+}

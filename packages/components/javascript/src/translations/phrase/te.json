@@ -1,0 +1,8 @@
+{
+  "correction_message": "మీ ఉద్దేశ్యం?",
+  "distance": "${PARAM} కి.మీ.",
+  "error_message": "దోషం సంభవించింది. దయచేసి తర్వాత మళ్ళీ ప్రయత్నించండి",
+  "input_hint": "ఉదా ///ప్రతిదినము.జనాలు.గుణము",
+  "invalid_address_message": "చెల్లుబాటు అయ్యే what3words చిరునామా కనుగొనబడలేదు",
+  "voice_placeholder": "ఒక 3 పదాల చిరునామా చెప్పండి"
+}

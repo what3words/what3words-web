@@ -1,0 +1,8 @@
+{
+  "correction_message": "Ingabe kade ufuna ukuthi?",
+  "distance": "${PARAM} km",
+  "error_message": "Kwenzeke iphutha. Sicela uzame futhi emuva kwesikhathi",
+  "input_hint": "isb. ///thulisa.baniza.enkabeni",
+  "invalid_address_message": "Alikho ikheli elivumelekile lakwa-what3words elitholakele",
+  "voice_placeholder": "Isho ikheli lamagama awu-3…"
+}

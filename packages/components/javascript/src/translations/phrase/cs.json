@@ -1,0 +1,8 @@
+{
+  "correction_message": "Mysleli jste?",
+  "distance": "${PARAM} km",
+  "error_message": "Vyskytla se chyba. Zkuste to prosím později",
+  "input_hint": "např. ///vyslat.ohyb.zvířata",
+  "invalid_address_message": "Nebyla nalezena žádná platná 3slovná adresa",
+  "voice_placeholder": "Řekněte 3slovnou adresu..."
+}

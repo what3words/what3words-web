@@ -1,0 +1,8 @@
+{
+  "correction_message": "നീ ഉദ്ദേശിച്ചോ ",
+  "distance": "${പരം} കി.മീ ",
+  "error_message": "ഒരു പിശക് സംഭവിച്ചു . വീണ്ടും ശ്രമിക്കുക ",
+  "input_hint": "ഉദാ. ///അങ്കണം.രമ്യം.ചാർത്തി",
+  "invalid_address_message": "സാധുതയുള്ള what33words വിലാസം കണ്ടെത്തിയില്ല ",
+  "voice_placeholder": "ഒരു 3 വാക്ക് വിലാസം പറയുക.. "
+}

@@ -1,0 +1,246 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap");
+@import "./flags.scss";
+
+$prefix: "what3words-autosuggest";
+
+// Set spinner/success state position based on LTR/RTL direction
+:not([dir="rtl"]):not([dir="ltr"])
+  what3words-autosuggest
+  > .#{$prefix}
+  > .#{$prefix}-input-wrapper
+  > .#{$prefix}-state,
+[dir="ltr"]
+  what3words-autosuggest
+  > .#{$prefix}
+  > .#{$prefix}-input-wrapper
+  > .#{$prefix}-state {
+  right: 4px;
+}
+[dir="rtl"]
+  what3words-autosuggest
+  > .#{$prefix}
+  > .#{$prefix}-input-wrapper
+  > .#{$prefix}-state {
+  left: 4px;
+}
+
+what3words-autosuggest {
+  font-family: Source Sans Pro;
+  font-style: normal;
+  font-weight: normal;
+
+  // Base settings
+  & > .#{$prefix} {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    // INPUT
+    & > .#{$prefix}-input-wrapper {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      & > input {
+        min-width: 1px;
+      }
+
+      & > .#{$prefix}-state {
+        position: absolute;
+        z-index: 100;
+        width: 20px;
+        height: 20px;
+        margin-right: 0.25rem;
+        content: " ";
+
+        &.valid {
+          background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMzU2IDM1NiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMzU2IDM1NjsiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+LnN0MHtmaWxsOiMwMDk0NDQ7c3Ryb2tlOiMzOUI1NEE7c3Ryb2tlLW1pdGVybGltaXQ6MTA7fTwvc3R5bGU+PGcgaWQ9IndOUU5Tei50aWYiPjxnIGlkPSJYTUxJRF8xXyI+PGcgaWQ9IlhNTElEXzIyXyI+PHBhdGggaWQ9IlhNTElEXzI0XyIgY2xhc3M9InN0MCIgZD0iTTAsMTg2LjVjMC01LjcsMC0xMS4zLDAtMTdjMC42LTcuMiwxLjItMTQuNCwyLjUtMjEuNWM3LjctNDIuMywyNy42LTc3LjcsNjAuMy0xMDUuNmMyNS4xLTIxLjQsNTQuMS0zNC43LDg2LjctNDAuMWM2LjctMS4xLDEzLjQtMS42LDIwLjEtMi4zYzUuNywwLDExLjMsMCwxNywwYzYuNiwwLjYsMTMuMiwxLjEsMTkuOCwyLjJjMzkuMyw2LjYsNzMsMjQuMSwxMDAuNSw1M2MyNS40LDI2LjYsNDAuOSw1OC4yLDQ2LjksOTQuNWMxLjEsNi42LDEuNiwxMy4yLDIuMiwxOS44YzAsNS43LDAsMTEuMywwLDE3Yy0wLjYsNy4yLTEuMiwxNC40LTIuNSwyMS41Yy03LjcsNDIuMy0yNy42LDc3LjctNjAuMywxMDUuNmMtMjUuMSwyMS40LTU0LjEsMzQuNy04Ni43LDQwLjFjLTYuNywxLjEtMTMuNCwxLjYtMjAuMSwyLjNjLTUuNywwLTExLjMsMC0xNywwYy02LjYtMC42LTEzLjItMS4xLTE5LjgtMi4yYy0zOS4zLTYuNi03My0yNC4xLTEwMC41LTUzYy0yNS40LTI2LjYtNDAuOS01OC4yLTQ2LjktOTQuNUMxLjEsMTk5LjcsMC42LDE5My4xLDAsMTg2LjV6IE0zMzQuMywxNzguMUMzMzMuOCw5MS40LDI2NC45LDIyLDE3OC40LDIxLjhDOTEuNiwyMS42LDIyLjEsOTEsMjEuOCwxNzcuNUMyMS42LDI2NC41LDkxLDMzNCwxNzcuNywzMzQuMkMyNjQuNiwzMzQuMywzMzMuNywyNjQuOCwzMzQuMywxNzguMXoiLz48cGF0aCBpZD0iWE1MSURfMjNfIiBjbGFzcz0ic3QwIiBkPSJNMTQ3LjcsMjUzLjdjLTMuNywwLjItNi43LTEuMi05LjMtMy43Yy0xNy41LTE3LjYtMzUuMS0zNS4xLTUyLjYtNTIuN2MtNy4zLTcuNC00LjUtMTkuNCw1LjItMjJjNS4xLTEuNCw5LjYtMC4xLDEzLjUsMy43YzEyLjksMTIuOSwyNS44LDI1LjgsMzguNywzOC43YzQuNiw0LjYsNC42LDQuNiw5LjIsMGMzMi42LTMyLjYsNjUuMS02NS4xLDk3LjctOTcuN2M1LjUtNS41LDEzLjItNS45LDE4LjYtMWM1LjYsNS4xLDUuOCwxMy41LDAuMiwxOS4xYy03LDcuMS0xNC4xLDE0LjEtMjEuMiwyMS4yYy0zMC4xLDMwLjEtNjAuMiw2MC4yLTkwLjIsOTAuM0MxNTQuNywyNTIuNCwxNTEuNSwyNTQsMTQ3LjcsMjUzLjd6Ii8+PC9nPjwvZz48L2c+PC9zdmc+");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: 16px;
+          align-self: center;
+        }
+        &.loading {
+          display: block;
+          border-radius: 50%;
+          border: 1px solid #000;
+          border-color: #000 transparent #000 transparent;
+          animation: lds-dual-ring 1.2s linear infinite;
+        }
+      }
+    }
+
+    // SUGGESTIONS
+    & > .#{$prefix}-suggestions {
+      // Although these are re-invoked in the absolutes it is nice to have these as a parent setting which all child
+      // elements should inherit or adhere to
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+
+      &.hidden {
+        display: none;
+      }
+
+      & > .#{$prefix}-items {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.2));
+        border-bottom: 1px solid #7a7a7a;
+        z-index: 500;
+
+        & > .#{$prefix}-item {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 12px;
+          background: #fff;
+          box-shadow: inset 0px -1px 0px #f2f4f5;
+          flex-grow: 1;
+          cursor: pointer;
+
+          // Hover and match state
+          &.match {
+            background: #dbeffa;
+          }
+          // Hover only
+          &:hover {
+            background: #fff;
+            box-shadow: inset 0px 5000px 0px rgba(0, 83, 121, 0.08);
+            transition: filter 100ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+            &:active {
+              filter: brightness(0.95);
+            }
+          }
+          &:active,
+          &.active {
+            background: #fff;
+            box-shadow: inset 0px 5000px 0px rgba(0, 83, 121, 0.15);
+          }
+
+          & > .#{$prefix}-address {
+            pointer-events: none;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 0px;
+            position: static;
+            height: 22px;
+            left: 0px;
+            top: 0px;
+            flex: none;
+            order: 0;
+            align-self: stretch;
+            flex-grow: 0;
+            font-weight: 600;
+            font-size: 17px;
+            line-height: 22px;
+            color: #0a3049;
+
+            & > .#{$prefix}-words {
+              width: 100%;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              text-align: left;
+            }
+          }
+
+          & > .#{$prefix}-nearest-place {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            padding: 0px 0px 0px 18px;
+            align-self: stretch;
+
+            & > .#{$prefix}-flag {
+              margin-right: 3px;
+              margin-left: 1px;
+            }
+
+            & > .#{$prefix}-nearest-place-text {
+              display: flex;
+              flex-grow: 1;
+              justify-content: space-between;
+
+              & > div:first-child {
+                font-size: 13px;
+                line-height: 18px;
+                color: #525252;
+                text-overflow: ellipsis;
+              }
+
+              & > .#{$prefix}-nearest-place-distance {
+                display: flex;
+                flex-wrap: nowrap;
+                font-weight: 600;
+                font-size: 13px;
+                line-height: 18px;
+                text-align: right;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    & > .#{$prefix}-error-wrapper {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      z-index: 300;
+
+      & > .#{$prefix}-error {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        top: -1px;
+        border: 1px solid #c2c2c2;
+        border-top: 1px solid #ed694e;
+        background-color: #fff;
+
+        & > .#{$prefix}-message {
+          padding: 4px 16px 4px 16px;
+          color: #ed694e;
+          font-size: 14px;
+          line-height: 20px;
+        }
+      }
+    }
+
+    // DEFAULT VARIANT STYLES
+    &.default {
+      & > .#{$prefix}-input-wrapper > input {
+        display: flex;
+        flex-grow: 1;
+        padding: 12px 32px 12px 16px;
+        background: #fff;
+        color: #0a3049;
+        border: 1px solid #c2c2c2;
+        appearance: none;
+        font-size: 18px;
+        line-height: 23px;
+
+        &:focus {
+          outline: -webkit-focus-ring-color auto 5px;
+        }
+      }
+      & > .#{$prefix}-error-wrapper > .#{$prefix}-error,
+      & > .#{$prefix}-suggestions {
+        margin-top: 0px;
+      }
+    }
+  }
+}
+
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

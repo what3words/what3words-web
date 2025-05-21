@@ -1,0 +1,22 @@
+{
+  "name": "components-playground",
+  "version": "5.0.1",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "clean": "npx del node_modules",
+    "dev": "node esbuild.config.mjs",
+    "dev:components-autosuggest-static": "concurrently \"npm run dev\" \"npm --workspace components-autosuggest-static run dev\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^9.1.0",
+    "esbuild": "^0.24.0"
+  },
+  "dependencies": {
+    "@what3words/javascript-loader": "*"
+  }
+}

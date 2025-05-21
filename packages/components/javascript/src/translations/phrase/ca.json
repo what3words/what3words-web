@@ -1,0 +1,8 @@
+{
+  "correction_message": "Volies dir?",
+  "distance": "${PARAM} km",
+  "error_message": "S'ha produït un error. Torna-ho a provar més tard.",
+  "input_hint": "p. ex., ///esmorzat.aviació.lliurant",
+  "invalid_address_message": "No s'ha trobat cap adreça de 3 paraules vàlida",
+  "voice_placeholder": "Digues una adreça de 3 paraules…"
+}

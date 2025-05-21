@@ -1,0 +1,169 @@
+name: Continuous Integration
+
+on:
+  pull_request:
+    branches: ["*"]
+  push:
+    branches: ["main"]
+  workflow_call:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .tool-versions
+          cache: npm
+
+      - name: Cache npm dependencies
+        id: cache-node-modules
+        uses: actions/cache@v4
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: |
+            ./node_modules
+            **/node_modules
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }}
+
+      - name: Cache cypress binary
+        id: cache-cypress
+        uses: actions/cache@v4
+        env:
+          cache-name: cache-cypress
+        with:
+          path: ~/.cache/Cypress
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }}
+
+      - name: Install dependencies
+        run: npm ci
+        env:
+          NODE_OPTIONS: "--max_old_space_size=4096"
+
+  stencil-tests:
+    needs: install
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .tool-versions
+          cache: npm
+
+      - name: Restore npm dependencies cache
+        id: cache-node-modules
+        uses: actions/cache@v4
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: |
+            ./node_modules
+            **/node_modules
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }}
+
+      - name: Cache puppeteer browser
+        id: cache-puppeteer
+        uses: actions/cache@v4
+        env:
+          cache-name: cache-puppeteer
+        with:
+          path: ~/.cache/puppeteer
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }}
+
+      - name: Install browser
+        run: node node_modules/puppeteer/install.mjs
+
+      - name: Run stencil tests
+        # speed-up jest runner in CI: https://jestjs.io/docs/troubleshooting#tests-are-extremely-slow-on-docker-andor-continuous-integration-ci-server
+        # cpu core count of 4 for public repos: https://docs.github.com/en/actions/using-github-hosted-runners/using-github-hosted-runners/about-github-hosted-runners#standard-github-hosted-runners-for-public-repositories
+        run: npm run --workspace @what3words/javascript-components test -- --runInBand --maxWorkers=4
+
+  cypress-tests:
+    runs-on: ubuntu-latest
+    needs:
+      - install
+      - stencil-tests
+
+    strategy:
+      fail-fast: false
+      matrix:
+        spec:
+          - autosuggest
+          - map
+        application:
+          - angular-ng-module
+          - react-vite
+          - static
+          - vue-create-vue
+        include:
+          - spec: autosuggest
+            application: angular-19-standalone
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .tool-versions
+          cache: npm
+
+      - name: Restore npm dependencies cache
+        id: cache-node-modules
+        uses: actions/cache@v4
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: |
+            ./node_modules
+            **/node_modules
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }}
+
+      - name: Restore cypress binary cache
+        id: cache-cypress
+        uses: actions/cache@v4
+        env:
+          cache-name: cache-cypress
+        with:
+          path: ~/.cache/Cypress
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }}
+
+        # ruuning the build for every strategy run is inefficient but unnavoidable.
+        # npm workspace support is built on symlinks which seemingly cannot be cached possibly due to dereferencing.
+        # using artifacts would solve for this, but would introduce downstream limitations as they are only accessible within single workflow contexts.
+        # - https://github.com/orgs/nodejs/discussions/37509
+      - name: Build packages
+        run: npm run build:packages
+
+        # use xvfb-run to avoid [port clashing](https://github.com/cypress-io/xvfb/issues/98#issuecomment-557170579 ). this allows the tests to run in parallel on a single machine,
+        # a requirement that the official [cypress/github-action](https://github.com/cypress-io/github-action) could not achieve in development,
+        # TODO: [auto-retries](https://github.com/userdocs/gh-cli-workflow-reruns) can be manually implemented using reusable workflows
+      - name: Run cypress (cy:${{ matrix.spec }}-${{ matrix.application }})
+        run: xvfb-run -a npm --workspace examples-e2e run cy:test-app --application=components-${{matrix.spec}}-${{matrix.application}} --spec=${{matrix.spec}}
+        working-directory: apps/examples/e2e
+        env:
+          CYPRESS_SCREENSHOTS_FOLDER: cypress/screenshots/e2e/${{ matrix.application }}
+
+      - name: Upload cypress artifacts (cy:${{ matrix.spec }}-${{ matrix.application }})
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: cypress-screenshots-${{ matrix.spec }}-${{ matrix.application }}
+          path: apps/examples/e2e/cypress/screenshots
+          if-no-files-found: ignore # 'warn' or 'error' are also available, defaults to `warn`
+          overwrite: true

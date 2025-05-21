@@ -1,0 +1,8 @@
+{
+  "correction_message": "તમારો મતલબ હતો?",
+  "distance": "${PARAM} કિમી",
+  "error_message": "એક ભૂલ આવી. પછીથી ફરી પ્રયત્ન કરો",
+  "input_hint": "દા. ત. ///બગી.રજાઈ.માસી",
+  "invalid_address_message": "કોઈ માન્ય what3words સરનામું મળ્યું નથી",
+  "voice_placeholder": "3 શબ્દનું સરનામું કહો ..."
+}

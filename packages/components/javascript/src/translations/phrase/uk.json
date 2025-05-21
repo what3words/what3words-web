@@ -1,0 +1,8 @@
+{
+  "correction_message": "Ви це мали на увазі?",
+  "distance": "${PARAM} км",
+  "error_message": "Сталася помилка. Повторіть спробу пізніше",
+  "input_hint": "Наприклад, ///коханий.прояви.залік",
+  "invalid_address_message": "Така адреса із 3 слів не знайдена",
+  "voice_placeholder": "Назвіть адресу із 3 слів"
+}

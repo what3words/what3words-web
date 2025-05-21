@@ -1,0 +1,126 @@
+{
+  "name": "@what3words/javascript-components",
+  "version": "5.0.1",
+  "private": false,
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.js",
+  "types": "dist/types/index.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "collection:main": "dist/collection/index.js",
+  "jsdelivr": "dist/what3words/what3words.esm.js",
+  "unpkg": "dist/what3words/what3words.esm.js",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/what3words/what3words.esm.js",
+      "require": "./dist/what3words/what3words.js"
+    },
+    "./components": {
+      "types": "./dist/components/index.d.ts",
+      "import": "./dist/components/index.js"
+    },
+    "./components/what3words-address.js": {
+      "types": "./dist/components/what3words-address.d.ts",
+      "import": "./dist/components/what3words-address.js"
+    },
+    "./components/what3words-autosuggest.js": {
+      "types": "./dist/components/what3words-autosuggest.d.ts",
+      "import": "./dist/components/what3words-autosuggest.js"
+    },
+    "./components/what3words-map.js": {
+      "types": "./dist/components/what3words-map.d.ts",
+      "import": "./dist/components/what3words-map.js"
+    },
+    "./components/what3words-symbol.js": {
+      "types": "./dist/components/what3words-symbol.d.ts",
+      "import": "./dist/components/what3words-symbol.js"
+    },
+    "./components/what3words-notes.js": {
+      "types": "./dist/components/what3words-notes.d.ts",
+      "import": "./dist/components/what3words-notes.js"
+    },
+    "./hydrate": {
+      "types": "./hydrate/index.d.ts",
+      "import": "./hydrate/index.js",
+      "require": "./hydrate/index.js"
+    },
+    "./loader": {
+      "types": "./loader/index.d.ts",
+      "import": "./loader/index.js",
+      "require": "./loader/index.cjs.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "files": [
+    "dist/",
+    "loader/",
+    "hydrate/"
+  ],
+  "config": {
+    "root": "../../.."
+  },
+  "scripts": {
+    "prepublishOnly": "npx --package-path=$PWD --strict=false publint-lint-package",
+    "postpublish": "",
+    "prebuild": "npx del --force loader www dist hydrate ../react/lib/react-component-lib ../react/lib/components.ts ../vue/lib/components.ts ../vue/lib/vue-component-lib ../angular/components/src/lib/components.ts ../angular/components/src/lib/index.ts ../angular/components/src/lib/angular-component-lib",
+    "build:phrase": "npm run with-env scripts/phrase.js $PWD/.phrase.yml",
+    "build": "npm run build:phrase && stencil build",
+    "postbuild": "npx del dist/**/*.js.map && npm run size",
+    "size": "bundlewatch --config .bundlewatch.config.json",
+    "clean": "npx del node_modules .stencil",
+    "coverage": "npm run test -- --coverage --reporter=lcov",
+    "dev": "stencil build --dev --watch --serve",
+    "format": "prettier --ignore-path $npm_package_config_root/.gitignore --ignore-path .prettierignore --check . ../angular ../react ../vue",
+    "generate": "stencil generate",
+    "lint": "eslint .",
+    "test": "stencil test --spec --e2e",
+    "test:spec": "stencil test --spec",
+    "test:e2e": "stencil test --e2e",
+    "test:watch": "stencil test --spec --e2e --watchAll",
+    "with-env": "dotenv -e $npm_package_config_root/.env -c --"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@eslint/compat": "^1.2.7",
+    "@eslint/js": "^9.21.0",
+    "@stencil/angular-output-target": "^0.8.4",
+    "@stencil/core": "^4.19.2",
+    "@stencil/react-output-target": "^0.5.3",
+    "@stencil/sass": "^3.0.12",
+    "@stencil/vue-output-target": "^0.8.8",
+    "@tsconfig/recommended": "^1.0.8",
+    "@types/chance": "^1.1.6",
+    "@types/google.maps": "^3.55.12",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.14.0",
+    "@types/uuid": "^10.0.0",
+    "@what3words/javascript-cli": "*",
+    "bundlewatch": "^0.4.0",
+    "chance": "^1.1.12",
+    "dotenv": "^16.4.5",
+    "dotenv-cli": "^8.0.0",
+    "eslint": "^9.21.0",
+    "eslint-config-prettier": "^10.0.2",
+    "globals": "^16.0.0",
+    "jest": "^29.7.0",
+    "jest-cli": "^29.7.0",
+    "prettier": "^3.5.3",
+    "puppeteer": "^22.14.0",
+    "rollup-plugin-node-polyfills": "^0.2.1",
+    "typescript": "^5.8.2",
+    "typescript-eslint": "^8.26.0"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@googlemaps/js-api-loader": "1.14.3",
+    "@what3words/api": "^5.2.1",
+    "axios": "^1.7.4",
+    "cross-fetch": "^4.0.0",
+    "uuid": "^10.0.0"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "name": "@what3words/javascript-cli",
+  "version": "5.0.1",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "gha-check-package-versions": "bin/gha-check-package-versions.js",
+    "npm-check-package-versions": "bin/npm-check-package-versions.js",
+    "publint-lint-package": "bin/publint-lint-package.js"
+  },
+  "files": [
+    "bin",
+    "dist"
+  ],
+  "config": {
+    "root": "../../.."
+  },
+  "scripts": {
+    "prebuild": "npx del dist",
+    "build": "tsc -b . -f",
+    "clean": "npx del node_modules",
+    "format": "prettier --check . --ignore-path $npm_package_config_root/.gitignore --ignore-path .prettierignore",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@eslint/compat": "^1.2.7",
+    "@eslint/js": "^9.21.0",
+    "@tsconfig/recommended": "^1.0.8",
+    "@types/node": "^22.13.9",
+    "eslint": "^9.21.0",
+    "eslint-config-prettier": "^10.0.2",
+    "globals": "^16.0.0",
+    "prettier": "^3.5.3",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.26.0"
+  },
+  "dependencies": {
+    "@actions/core": "^1.11.1",
+    "package-json": "^10.0.1",
+    "publint": "^0.3.2"
+  }
+}

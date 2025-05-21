@@ -1,0 +1,8 @@
+{
+  "correction_message": "אולי התכוונת?",
+  "distance": "‪${PARAM}‬ ק\"מ",
+  "error_message": "אירעה שגיאה. יש לנסות שוב מאוחר יותר",
+  "input_hint": "לדוגמה: ///דירתך.מתבונן.גבוהה",
+  "invalid_address_message": "לא נמצאה כתובת 3 מילים תקינה",
+  "voice_placeholder": "אמרו בקול כתובת 3 מילים..."
+}

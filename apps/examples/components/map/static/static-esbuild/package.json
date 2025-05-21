@@ -1,0 +1,25 @@
+{
+  "name": "components-map-static",
+  "version": "5.0.1",
+  "description": "",
+  "private": true,
+  "main": "index.html",
+  "config": {
+    "root": "../../../../../../"
+  },
+  "scripts": {
+    "clean": "npx del node_modules",
+    "dev": "node esbuild.config.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@what3words/javascript-components": "*",
+    "@what3words/javascript-loader": "*"
+  },
+  "devDependencies": {
+    "esbuild": "^0.24.0",
+    "esbuild-plugin-copy": "^2.1.1"
+  }
+}

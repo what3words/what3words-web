@@ -1,0 +1,31 @@
+pre-commit:
+  parallel: true
+  commands:
+    "format(packages/shared)":
+      root: "packages/shared"
+      glob: "*.{md}"
+      run: npm exec -- prettier --check --log-level warn {staged_files}
+
+    "tsc(@what3words/javascript-cli)":
+      # The tsc command will fail to find the project file w/o workspace scoping the npm exec command
+      run: npm exec --workspace=@what3words/javascript-cli -- tsc --project ./tsconfig.json --noEmit
+    "lint(@what3words/javascript-cli)":
+      root: "packages/shared/javascript-cli"
+      glob: "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx}"
+      run: npm exec -- eslint --max-warnings=0 --report-unused-disable-directives --no-warn-ignored {staged_files}
+    "format(@what3words/javascript-cli)":
+      root: "packages/shared/javascript-cli"
+      glob: "*.{js,ts,jsx,tsx,yml,json,md}"
+      run: npm exec -- prettier --check --log-level warn {staged_files}
+
+    "tsc(@what3words/javascript-loader)":
+      # The tsc command will fail to find the project file w/o workspace scoping the npm exec command
+      run: npm exec --workspace=@what3words/javascript-loader -- tsc --project ./tsconfig.json --noEmit
+    "lint(@what3words/javascript-loader)":
+      root: "packages/shared/javascript-loader"
+      glob: "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx}"
+      run: npm exec -- eslint --max-warnings=0 --report-unused-disable-directives --no-warn-ignored {staged_files}
+    "format(@what3words/javascript-loader)":
+      root: "packages/shared/javascript-loader"
+      glob: "*.{js,ts,jsx,tsx,yml,json,md}"
+      run: npm exec -- prettier --check --log-level warn {staged_files}

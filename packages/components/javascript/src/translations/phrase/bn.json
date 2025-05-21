@@ -1,0 +1,8 @@
+{
+  "correction_message": "আপনি কি এটা বলছেন?",
+  "distance": "${PARAM} কি.মি.",
+  "error_message": "একটি ত্রুটি ঘটেছে।পরে আবার চেষ্টা করুন",
+  "input_hint": "যেমন ///বিষয়ে.হীরা.রাত্রি",
+  "invalid_address_message": "কোনো বৈধ 3 শব্দের ঠিকানা পাওয়া যায় নি",
+  "voice_placeholder": "3 শব্দের ঠিকানা বলুন..."
+}

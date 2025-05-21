@@ -1,0 +1,8 @@
+{
+  "correction_message": "Та тэгж хэлэх гэсэн үү?",
+  "distance": "${PARAM} км",
+  "error_message": "Алдаа гарлаа. Дахин оролдож үзнэ үү.",
+  "input_hint": "Жишээ нь: ///хөмсөг.дүрэм.хучилт",
+  "invalid_address_message": "3 үгт хаяг олдсонгүй",
+  "voice_placeholder": "3 үгт хаягаа хэлнэ үү"
+}

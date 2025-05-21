@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      href="https://what3words.com/assets/images/w3w_square_red.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="https://what3words.com/assets/images/w3w_square_red.png"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Hand-rolled static site" />
+    <title>what3words Components Autosuggest Static</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script type="module" src="./dist/javascript-loader/index.esm.js"></script>
+    <script nomodule="true" src="./dist/javascript-loader/index.js"></script>
+    <script src="./index.js" defer></script>
+  </head>
+  <body>
+    <div id="root">
+      <h2>what3words Notes Component - Static HTML</h2>
+      <form
+        id="form"
+        method="GET"
+        onSubmit="{(e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          console.log({ target: e.target });
+        }}"
+      >
+        <div class="form-container">
+          <div class="form-field">
+            <what3words-notes data-testid="w3w-notes-component">
+              <label slot="label" for="delivery-notes">Delivery Notes</label>
+              <textarea
+                slot="input"
+                name="delivery-notes"
+                title="delivery-notes"
+              ></textarea>
+            </what3words-notes>
+          </div>
+        </div>
+        <button type="submit" data-testid="submit">Complete</button>
+      </form>
+    </div>
+  </body>
+</html>

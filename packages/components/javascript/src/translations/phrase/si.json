@@ -1,0 +1,8 @@
+{
+  "correction_message": "ඔබ අදහස් කළේ?",
+  "distance": "කි.මී. ${PARAM}",
+  "error_message": "දෝෂයක් ඇති විය. කරුණාකර පසුව නැවත උත්සාහ කරන්න",
+  "input_hint": "උදා. ///කවිච්චි.ආරංචි.බෝතලය",
+  "invalid_address_message": "වලංගු what3words ලිපිනයක් හමු නොවුණි",
+  "voice_placeholder": "what3words ලිපිනයක් කියන්න..."
+}

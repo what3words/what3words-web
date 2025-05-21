@@ -1,0 +1,8 @@
+{
+  "correction_message": "Oeddech chi'n meddwl?",
+  "distance": "${PARAM} km",
+  "error_message": "Digwyddodd gwall. Rhowch gynnig arni eto'n hwyrach os gwelwch yn dda",
+  "input_hint": "e.e. ///marchog.carafannau.pasio",
+  "invalid_address_message": "Ni chanfyddwyd unrhyw gyfeiriadau what3words dilys",
+  "voice_placeholder": "Dywedwch gyfeiriad what3words..."
+}

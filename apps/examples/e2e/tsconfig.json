@@ -1,0 +1,9 @@
+{
+  "extends": "@tsconfig/cypress/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "types": ["node"]
+  }
+}

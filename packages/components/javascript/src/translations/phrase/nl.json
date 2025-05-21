@@ -1,0 +1,8 @@
+{
+  "correction_message": "Bedoelde je?",
+  "distance": "${PARAM} km",
+  "error_message": "Er is een fout opgetreden. Probeer het later nog eens.",
+  "input_hint": "bv. ///eren.lieveling.knipsel",
+  "invalid_address_message": "Geen geldig what3words adres gevonden",
+  "voice_placeholder": "Zeg een 3-woorden-adres"
+}

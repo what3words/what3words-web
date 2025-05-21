@@ -1,0 +1,8 @@
+{
+  "correction_message": "Czy chodziło Ci o?",
+  "distance": "${PARAM} km\n",
+  "error_message": "Wystąpił błąd. Spróbuj ponownie później",
+  "input_hint": "np. ///pojazd.podać.zwołać",
+  "invalid_address_message": "Nie znaleziono poprawnego adresu what3words",
+  "voice_placeholder": "Powiedz adres trzywyrazowy..."
+}

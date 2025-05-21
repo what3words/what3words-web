@@ -1,0 +1,8 @@
+{
+  "correction_message": "Menade du?",
+  "distance": "S{PARAM} km",
+  "error_message": "Ett fel uppstod. Försök igen senare",
+  "input_hint": "t.ex. ///tabell.bryning.köer",
+  "invalid_address_message": "Ingen giltig 3-ordsadress hittades",
+  "voice_placeholder": "Säg en 3-ordsadress"
+}

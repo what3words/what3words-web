@@ -1,0 +1,8 @@
+{
+  "correction_message": "Μήπως εννοείς;",
+  "distance": "${PARAM} χλμ.",
+  "error_message": "Προέκυψε κάποιο λάθος. Παρακαλώ προσπαθήστε πάλι αργότερα.",
+  "input_hint": "π.χ. ///πίστεψα.αρχαίο.κέρασε",
+  "invalid_address_message": "Δεν βρέθηκε έγκυρη διεύθυνση what3words.",
+  "voice_placeholder": "Πείτε μία διεύθυνση 3 λέξεων..."
+}

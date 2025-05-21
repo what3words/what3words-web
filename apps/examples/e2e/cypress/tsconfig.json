@@ -1,0 +1,11 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "resolveJsonModule": true,
+    "paths": {
+      "@cypress/fixtures": ["./fixtures/index.ts"]
+    }
+  },
+  "include": ["**/*.ts"]
+}

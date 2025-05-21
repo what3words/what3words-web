@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<what3words-map /> renders should render map div and controls 1`] = `
+<what3words-map>
+  <!---->
+  <div slot="map"></div>
+  <div aria-hidden="true" data-testid="controls-wrapper" id="controls-wrapper" style="visibility: hidden;">
+    <div slot="search-control">
+      <what3words-autosuggest class="default">
+        <!---->
+        <div class="default what3words-autosuggest">
+          <div class="what3words-autosuggest-input-wrapper" data-testid="input-wrapper">
+            <input name="what3words_3wa" placeholder="e.g. ///lock.spout.radar" type="text" value="undefined">
+            <span class="what3words-autosuggest-state" data-testid="state"></span>
+          </div>
+          <div class="hidden what3words-autosuggest-suggestions" data-testid="suggestions-wrapper">
+            <div class="what3words-autosuggest-items"></div>
+          </div>
+        </div>
+      </what3words-autosuggest>
+    </div>
+  </div>
+</what3words-map>
+`;
+
+exports[`<what3words-map /> renders should render with map div 1`] = `
+<what3words-map>
+  <!---->
+  <div slot="map"></div>
+  <div aria-hidden="true" data-testid="controls-wrapper" id="controls-wrapper" style="visibility: hidden;">
+  </div>
+</what3words-map>
+`;

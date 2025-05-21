@@ -1,0 +1,13 @@
+phrase:
+  project_id: 12efe24d0917c72a1db5edfcd1eeea45
+  pull:
+    targets:
+      - file: ./src/translations/phrase/<locale_code>.json
+        params:
+          file_format: simple_json
+  push:
+    sources:
+      - file: ./src/translations/phrase/<locale_code>.json
+        params:
+          file_format: simple_json
+          locale_id: en # only allow updates to en locale

@@ -1,0 +1,8 @@
+{
+  "correction_message": "Erre gondoltál?",
+  "distance": "${PARAM} km",
+  "error_message": "Hiba történt. Próbálkozz később!",
+  "input_hint": "pl. ///termék.eperhab.rászáll",
+  "invalid_address_message": "Nem található érvényes háromszavas cím",
+  "voice_placeholder": "Mondj ki egy háromszavas címet..."
+}

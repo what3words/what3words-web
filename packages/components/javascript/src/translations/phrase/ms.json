@@ -1,0 +1,8 @@
+{
+  "correction_message": "Adakah anda bermaksud?",
+  "distance": "${PARAM} km",
+  "error_message": "Ralat berlaku . Sila cuba sebentar lagi",
+  "input_hint": "cth. ///kapasiti.posisiku.diselangi",
+  "invalid_address_message": "Tidak alamat what3words yang sah dijumpai ",
+  "voice_placeholder": "Mengatakan satu alamat mengandungi 3 perkataan"
+}

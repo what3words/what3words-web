@@ -1,0 +1,8 @@
+{
+  "correction_message": "Het jy bedoel?",
+  "distance": "${PARAM} km",
+  "error_message": "'n Fout het voorgekom. Probeer asb later weer.",
+  "input_hint": "b.v. ///biltong.vaswerk.gesluit",
+  "invalid_address_message": "Geen geldige what3words-adres gevind nie",
+  "voice_placeholder": "Sê 'n 3-woord-adres..."
+}

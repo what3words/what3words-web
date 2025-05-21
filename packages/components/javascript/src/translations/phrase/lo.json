@@ -1,0 +1,8 @@
+{
+  "correction_message": "ທ່ານໝາຍເຖິງ?",
+  "distance": "${PARAM} ກມ",
+  "error_message": "ມີຄວາມຜິດພາດເກີດຂຶ້ນ. ກະລຸນາລອງໃໝ່ໃນພາຍຫຼັງ",
+  "input_hint": "ເຊັ່ນ: ///ຕື່ນເດິກ.ຕົວຢ່າງ.ລອງກິນ",
+  "invalid_address_message": "ບໍ່ພົບທີ່ຢູ່ what3words ທີ່ຖືກຕ້ອງ",
+  "voice_placeholder": "ເວົ້າທີ່ຢູ່ 3 ຄຳສັບ…"
+}

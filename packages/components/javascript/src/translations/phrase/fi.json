@@ -1,0 +1,8 @@
+{
+  "correction_message": "Tarkoititko tätä?",
+  "distance": "${PARAM} km",
+  "error_message": "Tapahtui virhe. Ole hyvä ja yritä myöhemmin uudelleen.",
+  "input_hint": "Esim. ///nopeus.makkara.nenät",
+  "invalid_address_message": "what3words-osoitetta ei löytynyt",
+  "voice_placeholder": "Sanele 3 sanan osoite…"
+}

@@ -1,0 +1,8 @@
+{
+  "correction_message": "Şunu mu demek istediniz?",
+  "distance": "${PARAM} km",
+  "error_message": "Bir hata oluştu. Lütfen daha sonra tekrar deneyin.",
+  "input_hint": "ör. ///pati.ilerici.klas",
+  "invalid_address_message": "Geçerli bir what3words adresi bulunamadı",
+  "voice_placeholder": "3 kelimelik bir adres söyleyin..."
+}

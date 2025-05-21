@@ -1,0 +1,10 @@
+{
+  "correction_message": "Kas mõtlesid?",
+  "distance": "${PARAM} km",
+  "error_message": "Tekkis viga. Palun proovi mõne aja pärast uuesti",
+  "error_quota": "Kasutuslimiit on ületatud. Palun tutvu suurema mahuga pakettidega.",
+  "input_hint": "nt. ///rehv.kenasti.koostöö",
+  "invalid_address_message": "Sobivaid what3words aadresse ei leitud",
+  "invalid_suggestions": "Ettepanekuid ei leitud. Palun proovi uuesti.",
+  "voice_placeholder": "Ütle 3-sõnaline aadress..."
+}

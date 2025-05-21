@@ -1,0 +1,8 @@
+{
+  "correction_message": "Ý bạn là...",
+  "distance": "${PARAM} km",
+  "error_message": "Đã có lỗi xảy ra. Vui lòng thử lại sau",
+  "input_hint": "Ví dụ: ///thảo dược.thắt lưng.ghế nệm",
+  "invalid_address_message": "Không tìm thấy địa chỉ 3 từ phù hợp",
+  "voice_placeholder": "Hãy nói 3 từ địa chỉ..."
+}

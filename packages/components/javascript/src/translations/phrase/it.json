@@ -1,0 +1,8 @@
+{
+  "correction_message": "Intendevi?",
+  "distance": "${PARAM} km",
+  "error_message": "Si è verificato un errore. Riprovare più tardi.",
+  "input_hint": "p.es. ///mandali.avvera.sarò",
+  "invalid_address_message": "Non è stato trovato nessun indirizzo valido",
+  "voice_placeholder": "Di' un indirizzo di 3 parole..."
+}

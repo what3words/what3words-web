@@ -1,0 +1,8 @@
+{
+  "correction_message": "क्या आपका मतलब यह है?",
+  "distance": "${PARAM} कि.मी.",
+  "error_message": "कुछ गलत हुआ है। थोड़ी देर में कोशिश करें",
+  "input_hint": "जैसे ///वर्गों.बनने.जिताया",
+  "invalid_address_message": "कोई भी 3 शब्दों का पता नहीं मिला",
+  "voice_placeholder": "3 शब्दों का पता बोलिए..."
+}

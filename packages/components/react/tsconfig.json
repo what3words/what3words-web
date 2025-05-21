@@ -1,0 +1,20 @@
+{
+  "extends": "./tsconfig.stencil.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "skipLibCheck": true,
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true,
+    "declarationDir": "./dist/types",
+    "paths": {
+      "react": ["./node_modules/@types/react"]
+    }
+  },
+  "include": ["lib"],
+  "exclude": ["node_modules"]
+}

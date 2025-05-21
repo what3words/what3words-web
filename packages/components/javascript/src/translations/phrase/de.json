@@ -1,0 +1,8 @@
+{
+  "correction_message": "Hast du das gemeint ",
+  "distance": "${PARAM} km",
+  "error_message": "Es ist ein Fehler aufgetreten. Versuche es bitte später erneut.",
+  "input_hint": "z. B. ///abteilung.einrichten.einweisung",
+  "invalid_address_message": "Keine gültige Dreiwortadresse gefunden",
+  "voice_placeholder": "Eine Dreiwortadresse sagen ..."
+}

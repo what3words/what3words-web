@@ -1,0 +1,27 @@
+{
+  "extends": "@tsconfig/recommended/tsconfig.json",
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "allowUnreachableCode": false,
+    "declaration": false,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "lib": ["dom", "es2017"],
+    "moduleResolution": "node",
+    "module": "esnext",
+    "target": "es2017",
+    "noUnusedLocals": false,
+    "noUnusedParameters": true,
+    "jsx": "react",
+    "jsxFactory": "h",
+    "noEmit": false,
+    "resolveJsonModule": true,
+    "paths": {
+      "@javascript-components/lib/*": ["./src/lib/*"]
+    },
+    "types": ["jest", "node"]
+  },
+  "include": ["src", "scripts/*.ts"],
+  "files": ["./src/declarations.d.ts"],
+  "exclude": ["node_modules"]
+}

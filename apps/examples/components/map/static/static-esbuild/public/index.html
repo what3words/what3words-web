@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="https://what3words.com/assets/images/w3w_square_red.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="https://what3words.com/assets/images/w3w_square_red.png"
+    />
+    <meta name="description" content="Hand-rolled static site" />
+    <title>what3words Components Map Static</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script type="module" src="./dist/javascript-loader/index.esm.js"></script>
+    <script nomodule="true" src="./dist/javascript-loader/index.js"></script>
+    <script src="./index.js" defer></script>
+  </head>
+  <body>
+    <div id="root">
+      <h2>what3words Map Component - Static HTML</h2>
+      <what3words-map data-testid="w3w-map-component">
+        <div slot="map" id="map" data-testid="w3w-map-container-slot"></div>
+        <div slot="search-control" data-testid="w3w-map-search-slot">
+          <what3words-autosuggest data-testid="w3w-map-autosuggest-component">
+            <input type="text" placeholder="e.g. ///filled.count.soap" />
+          </what3words-autosuggest>
+        </div>
+        <div slot="current-location-control" id="current-location-container">
+          <button type="button" data-testid="current-location-button">
+            Current Location
+          </button>
+        </div>
+      </what3words-map>
+    </div>
+  </body>
+</html>

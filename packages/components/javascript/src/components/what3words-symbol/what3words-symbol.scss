@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap");
+
+what3words-symbol {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 23px;
+
+  .what3words-logo {
+    display: inline-block;
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "correction_message": "நீங்கள் சொன்னீர்களா?",
+  "distance": "${PARAM} கிமீ",
+  "error_message": "ஒரு பிழை ஏற்பட்டது. தயவுசெய்து பிறகு முயற்சிக்கவும்",
+  "input_hint": "எ.கா. ///பதிவுகள்.ஓடவும்.பணமும்",
+  "invalid_address_message": "சரியான what3words முகவரி இல்லை",
+  "voice_placeholder": "ஒரு 3 வார்த்தை முகவரியைச் சொல்லுங்கள்..."
+}

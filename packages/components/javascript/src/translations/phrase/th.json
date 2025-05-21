@@ -1,0 +1,8 @@
+{
+  "correction_message": "คุณหมายถึงคำนี้ใช่ไหม",
+  "distance": "${PARAM} กม.",
+  "error_message": "เกิดข้อผิดพลาด กรุณาลองอีกครั้ง",
+  "input_hint": "เช่น. ///ขายปลีก.เลขคู่.ใบบอน",
+  "invalid_address_message": "ไม่พบที่อยู่ 3 คำ",
+  "voice_placeholder": "พูดที่อยู่ 3 คำ"
+}

@@ -1,0 +1,8 @@
+--platform ubuntu-latest=what3words/act-gha-runner
+--pull=false
+--env GITHUB_TOKEN=${GITHUB_TOKEN}
+--artifact-server-path $PWD/tmp/artifacts
+--env-file .env
+--input-file services/act/.input
+--secret-file services/act/.secrets
+--var-file services/act/.vars

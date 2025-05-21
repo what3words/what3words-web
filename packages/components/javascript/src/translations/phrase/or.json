@@ -1,0 +1,8 @@
+{
+  "correction_message": "ଆପଣଙ୍କ ମାନେ?",
+  "distance": "${PARAM} କି.ମି.",
+  "error_message": "ଏକ ତ୍ରୁଟି ଘଟିଛି। ଦୟାକରି ପରେ ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ",
+  "input_hint": "ମାନେ ///ସକାଳଟି.ଟାପୁ.ପାଉଛ",
+  "invalid_address_message": "କୌଣସି ବୈଧ what3words ଠିକଣା ମିଳିଲା ନାହିଁ ",
+  "voice_placeholder": "ଗୋଟିଏ 3 ଶବ୍ଦ ଠିକଣା କୁହନ୍ତୁ  "
+}
