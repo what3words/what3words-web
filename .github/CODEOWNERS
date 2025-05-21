@@ -1,33 +1,16 @@
 # Default owners for everything in the repo
 
-- @w3w-internal/tech-frontend
+- @what3words/front-end-team
 
 # Hybrid product-team ownership
 
-/*.md @w3w-internal/w3w-product @w3w-internal/tech-frontend
-/packages/components/javascript/src/translations/ @w3w-internal/w3w-product @w3w-internal/tech-frontend
-/apps/demos/ @w3w-internal/w3w-product @w3w-internal/tech-frontend
-/apps/examples/components/ @w3w-internal/w3w-product @w3w-internal/tech-frontend
+/*.md @what3words/product @what3words/front-end-team
+/packages/components/javascript/src/translations/ @what3words/product @what3words/front-end-team
+/apps/demos/ @what3words/product @what3words/front-end-team
+/apps/examples/components/ @what3words/product @what3words/front-end-team
 
 # Tech-team ownership
 
-/apps/examples/e2e/ @w3w-internal/tech-frontend
-/.github/workflows/ @w3w-internal/tech-frontend
-/packages/ @w3w-internal/tech-frontend
-
-## Default owners for everything in the repo
-
-#- @what3words/front-end-team
-
-## Hybrid product-team ownership
-
-#/*.md @what3words/product @what3words/front-end-team
-#/packages/components/javascript/src/translations/ @what3words/product @what3words/front-end-team
-#/apps/demos/ @what3words/product @what3words/front-end-team
-#/apps/examples/components/ @what3words/product @what3words/front-end-team
-
-## Tech-team ownership
-
-#/apps/examples/e2e/ @what3words/front-end-team
-#/.github/workflows/ @what3words/front-end-team
-#/packages/ @what3words/front-end-team
+/apps/examples/e2e/ @what3words/front-end-team
+/.github/workflows/ @what3words/front-end-team
+/packages/ @what3words/front-end-team
