@@ -1,6 +1,6 @@
 {
   "name": "@what3words/javascript-cli",
-  "version": "5.0.1",
+  "version": "5.0.2-alpha.0",
   "private": true,
   "type": "module",
   "bin": {
