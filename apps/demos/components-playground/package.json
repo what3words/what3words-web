@@ -7,7 +7,8 @@
   "scripts": {
     "clean": "npx del node_modules",
     "dev": "node esbuild.config.mjs",
-    "dev:components-autosuggest-static": "concurrently \"npm run dev\" \"npm --workspace components-autosuggest-static run dev\""
+    "dev:components-autosuggest-static": "concurrently \"npm run dev\" \"npm --workspace components-autosuggest-static run dev\"",
+    "dev:components-notes-static": "concurrently \"npm run dev\" \"npm --workspace components-notes-static run dev\""
   },
   "keywords": [],
   "author": "",
