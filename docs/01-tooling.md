@@ -8,13 +8,13 @@ We use [npm workspaces](https://docs.npmjs.com/cli/v8/using-npm/workspaces) to m
 
 > [!NOTE] This requirement to dynamically configure workspaces effectively rules out pnpm as a monorepo solution as it does not provide the same flexibility. Additionally, as pnpm uses custom protocol definitions (e.g. `workspace:*`), we would need a postbuild step to rebuild the package manifests (using the `createExportableManifest` @pnpm/exportable-manifest function) prior to publishing the packages.
 
-We use [del-cli](https://www.npmjs.com/package/del-cli) over [rimraf](https://www.npmjs.com/package/rimraf) to perform cross-platform file and directory filesystem deletion due to it's support for glob exception deletion as shown in the [angular component wrapper](../../packages/components/angular/package.json#L6). rimraf has limited support for [this](https://github.com/isaacs/rimraf/issues/113), and only through its sdk api.
+We use [del-cli](https://www.npmjs.com/package/del-cli) over [rimraf](https://www.npmjs.com/package/rimraf) to perform cross-platform file and directory filesystem deletion due to it's support for glob exception deletion as shown in the [angular component wrapper](../packages/components/angular/package.json#L6). rimraf has limited support for [this](https://github.com/isaacs/rimraf/issues/113), and only through its sdk api.
 
-We use [lefthook](https://lefthook.dev) as a git hooks manager. Compared to alternatives like [husky](https://typicode.github.io/husky/), lefthook was found to be more performant (due to parallelization and it is written in Go), language-agnostic (does not have runtime requirements besides the ability to install husky) and versatile (commands can be run against filtered files e.g. staged files).
+We use [lefthook](https://lefthook.dev) as a git hooks manager. Compared to alternatives like [husky](https://typicode.github.io/husky/), lefthook was found to be more performant (due to parallelization and it is written in Go), language-agnostic (provides multi-language packages/binaries) and versatile (commands can be run against filtered files e.g. staged files).
 
 ### Command/Task runner
 
-We currently use [GNU Make](https://www.gnu.org/software/make/) to run repo-level actions. It's generally available and widely used, though caveats like no argument passing mean that we also need to use [scripts](../scripts/) to dynamically execute tasks.
+We currently use [GNU Make](https://www.gnu.org/software/make/) to run repo-level actions. It's generally available and widely used, however it does not support argument passing but this can be resolved by using [scripts](../scripts/) for dynamic task execution.
 
 ## Bundling
 
@@ -47,13 +47,13 @@ To help with ease-of-integration, we use [nektos/act](https://github.com/nektos/
 Once a prospective component example is added to the [examples](../apps/examples/components/) directory and the `ci.yml` strategy matrix, you can run target GHA jobs with the following command
 
 ```bash
-> ./scripts/act-run.sh --job cypress-e2e
+> ./scripts/act-run.sh --job cypress-tests
 ```
 
 To speed up testing workflows, you can target specific example configurations using the matrix (`--matrix`) flag:
 
 ```bash
-> ./scripts/act-run.sh --job cypress-e2e --matrix spec:autosuggest --matrix application:static
+> ./scripts/act-run.sh --job cypress-tests --matrix spec:autosuggest --matrix application:static
 ```
 
 Depending on your available/allocated docker RAM, this can take a 3-10 minutes to complete. Once run, any failed tests will be available in the `./tmp/artifacts/1/cypress-screenshots/e2e` directory nested by example name. You can use these to better debug and iterate on failing tests before pushing your changes up.
