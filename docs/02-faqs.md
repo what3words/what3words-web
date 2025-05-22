@@ -44,7 +44,7 @@ There are some necessary workarounds in place to ensure packages/apps link to th
 
 Npm workspace package hoisting can cause present issues in certain app contexts such as [react native](https://github.com/npm/rfcs/issues/287#issue-741028151) and [angular](https://github.com/npm/rfcs/issues/287#issuecomment-945897074). This combined with the [angular package format](https://angular.dev/tools/libraries/angular-package-format) makes working with angular workspaces non-trivial in larger monorepo projects due to their highly-opinionated caching, optimizations and organization strategies.
 
-To overcome package linking issues, we _ignore_ the `@what3words/angular-components` source directory, but track both the workspace and build directories. The ensures we can appropriately target linking, building and publishing of the angular components. This can be seen in the root [package.json](../../package.json) scripts where angular concerns are targetted differently across various npm scripts.
+To overcome package linking issues, we _ignore_ the `@what3words/angular-components` source directory, but track both the workspace and build directories. This ensures we can appropriately target linking, building and publishing of the angular components. This can be seen in the root [package.json](../package.json) scripts where angular concerns are targetted differently across various npm scripts.
 
 This is an open and present issue when using angular within monorepo contexts, refer to this npm [issue](https://github.com/npm/cli/issues/6614).
 
@@ -79,7 +79,8 @@ More information:
 <details>
 <summary>GNU Make is a core dependency, why is it not included in the .tool-versions file?</summary>
 <hr/>
-Ideally, we would use `asdf` to manage all dependecies, however since our makefile installs asdf and it's plugins this creates a circular dependency. If you would still like to use asdf to install make, run the following in your terminal:
+Ideally, we would use `asdf` to manage all dependecies, but as GNU Make is a system-level package we leave this as opt-in. If you would still like to use asdf to install make, run the following in your terminal:
+
 ```bash
 > asdf install make latest
 ```
@@ -96,6 +97,6 @@ The asdf install command might fail with the above following error, if so run th
 > gpg --keyserver keys.gnupg.net --recv-key 80CB727A20C79BB2
 ```
 
-You can then set the make version with `asdf set make latest` and restart your shell for the shims to be applied. Running `make -v` should return the pinned version installed.
+You can then set the make version with `asdf set make latest` and restart your shell for the shims to be applied. Running `make -v` should return the pinned installed version.
 
 </details>
