@@ -11,7 +11,12 @@ The embedded application must then consume the provided URL query params and pas
 
 ## Getting Started
 
-Currently, this playground has only been tested with the `components-autosuggest-static` example. Run the following command to spin up the playground and the "components-autosuggest-static" example application.
+Currently, this playground has only been tested with the following examples
+
+- `components-autosuggest-static`
+- `components-notes-static`
+
+There are helper npm scripts to spin up the above, for example the command below loads the playground with the "components-autosuggest-static" example application.
 
 ```sh
 > npm --workspace components-playground run dev:components-autosuggest-static
@@ -33,6 +38,7 @@ The following table shows the current status of playground compatibility
 | components-map-angular-ng-module         | :x:                |
 | components-map-react-vite                | :x:                |
 | components-map-vue-create-vue            | :x:                |
+| components-notes-static                  | :white_check_mark: |
 | [codesandbox](https://codesandbox.io/)   | :construction:     |
 | [plunker](https://plnkr.co)              | :x:                |
 | [jsfiddle](https://jsfiddle.net)         | :x:                |
