@@ -908,7 +908,9 @@ export class What3wordsNotes {
     >;
     const headers = {
       ...componentHeaders,
-      ...(JSON.parse(this.headers) as UtilisationSessionHeader),
+      ...((typeof this.headers === "string"
+        ? JSON.parse(this.headers)
+        : this.headers) as UtilisationSessionHeader),
     };
     const config = {
       apiVersion: this.apiVersion,
