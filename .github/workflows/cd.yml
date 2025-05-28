@@ -8,11 +8,13 @@ jobs:
   prepare-packages:
     runs-on: ubuntu-latest
     outputs:
-      can-publish: ${{ steps.check-package-versions.outputs.can-publish }}
-      checked-package-versions: ${{ steps.check-package-versions.outputs.checked-package-versions }}
-      dist-committed-version: ${{ steps.check-distribution-release.outputs.dist-committed-version }}
-      dist-directory: ${{ steps.check-distribution-release.outputs.dist-directory }}
-      dist-is-prerelease: ${{ steps.check-distribution-release.outputs.dist-is-prerelease }}
+      can-publish: ${{ steps.gate-releases.outputs.can-publish }}
+      dist-committed-version: ${{ steps.gate-releases.outputs.dist-committed-version }}
+      dist-directory: ${{ steps.gate-releases.outputs.dist-directory }}
+      dist-is-prerelease: ${{ steps.gate-releases.outputs.dist-is-prerelease }}
+      next-package-urls: ${{ steps.gate-releases.outputs.next-package-urls }}
+      packages-to-publish: ${{ steps.gate-releases.outputs.packages-to-publish }}
+      versions-validated: ${{ steps.check-package-versions.outputs.versions-validated }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -41,19 +43,27 @@ jobs:
           --package-path=$publishPaths \
           -- gha-check-package-versions
 
-      - name: Check distribution release
-        id: check-distribution-release
+      - name: Gate releases
+        id: gate-releases
         run: |
           isPrerelease=$(jq -r '.["${{vars.DISTRIBUTION_PACKAGE}}"].isPrerelease' <<< '${{steps.check-package-versions.outputs.checked-package-versions}}')
           committedVersion=$(jq -r '.["${{vars.DISTRIBUTION_PACKAGE}}"].committedVersion' <<< '${{steps.check-package-versions.outputs.checked-package-versions}}')
           path=$(jq -r '.["${{vars.DISTRIBUTION_PACKAGE}}"].path' <<< '${{steps.check-package-versions.outputs.checked-package-versions}}')
-          echo "dist-is-prerelease=$isPrerelease" >> $GITHUB_OUTPUT
+          # we create newline separated raw strings to map iterate with xargs that runs the npm publish command: https://stackoverflow.com/a/50845457
+          packagesToPublish=$(jq -rc 'with_entries(select(.value.isPrerelease=="false")) | keys | join("\n")' <<< '${{steps.check-package-versions.outputs.checked-package-versions}}')
+          nextPackageUrls=$(jq -rc '. as $o | with_entries(.key |= "[" + . + "](https://www.npmjs.com/package/" + . + "/v/" + $o[.].committedVersion + ")") | keys | join("\n")' <<< '${{steps.check-package-versions.outputs.checked-package-versions}}')
+          canPublish=$([[ "${{steps.check-package-versions.outputs.versions-validated}}" = "true" && -n $packagesToPublish ]] && echo "true" || echo "false")
+
+          echo "can-publish=$canPublish" >> $GITHUB_OUTPUT
           echo "dist-committed-version=$committedVersion" >> $GITHUB_OUTPUT
           echo "dist-directory=$path" >> $GITHUB_OUTPUT
+          echo "dist-is-prerelease=$isPrerelease" >> $GITHUB_OUTPUT
+          echo "packages-to-publish=$packagesToPublish" >> $GITHUB_OUTPUT
+          echo "next-package-urls="$nextPackageUrls"" >> $GITHUB_OUTPUT
 
   integration-tests:
     needs: prepare-packages
-    if: needs.prepare-packages.outputs.can-publish == 'true'
+    if: needs.prepare-packages.outputs.versions-validated == 'true'
     uses: ./.github/workflows/ci.yml
 
   publish-npm:
@@ -61,7 +71,7 @@ jobs:
     needs:
       - integration-tests
       - prepare-packages
-    if: needs.prepare-packages.outputs.can-publish == 'true'
+    if: needs.prepare-packages.outputs.versions-validated == 'true' && needs.prepare-packages.outputs.can-publish == 'true'
 
     env:
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
@@ -94,9 +104,7 @@ jobs:
       - name: Publish packages
         id: publish-packages
         run: |
-          # we create newline separated raw strings to map iterate with xargs that runs the npm publish command: https://stackoverflow.com/a/50845457
-          packageNames=$(jq -rc 'keys | join("\n")' <<< '${{needs.prepare-packages.outputs.checked-package-versions}}')
-          echo $packageNames | xargs -n 1 npm publish -w
+          echo ${{needs.prepare-packages.outputs.packages-to-publish}} | xargs -n 1 --no-run-if-empty npm publish -w
         env:
           NODE_OPTIONS: "--max_old_space_size=4096"
           NODE_AUTH_TOKEN: ${{ env.NPM_TOKEN }}
@@ -106,15 +114,14 @@ jobs:
           echo "### Package(s) published! :gift:" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "#### Published package(s)" >> $GITHUB_STEP_SUMMARY
-          packageUrls=$(jq -rc '. as $o | with_entries(.key |= "[" + . + "](https://www.npmjs.com/package/" + . + "/v/" + $o[.].committedVersion + ")") | keys | join("\n")' <<< '${{needs.prepare-packages.outputs.checked-package-versions}}')
-          echo $packageUrls | xargs -n 1 echo >> $GITHUB_STEP_SUMMARY
+          echo ${{needs.prepare-packages.outputs.next-package-urls}} | xargs -n 1 echo >> $GITHUB_STEP_SUMMARY
 
   upload-distribution:
     runs-on: ubuntu-latest
     needs:
       - publish-npm
       - prepare-packages
-    if: needs.prepare-packages.outputs.can-publish == 'true'
+    if: needs.prepare-packages.outputs.versions-validated == 'true'
 
     env:
       AWS_IAM_ROLE: ${{ secrets.AWS_IAM_ROLE }}
