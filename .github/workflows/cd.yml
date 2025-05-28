@@ -120,6 +120,7 @@ jobs:
     runs-on: ubuntu-latest
     needs:
       - prepare-packages
+      - integration-tests
     if: needs.prepare-packages.outputs.versions-validated == 'true'
 
     env:
