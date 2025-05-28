@@ -119,7 +119,6 @@ jobs:
   upload-distribution:
     runs-on: ubuntu-latest
     needs:
-      - publish-npm
       - prepare-packages
     if: needs.prepare-packages.outputs.versions-validated == 'true'
 
