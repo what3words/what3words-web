@@ -114,7 +114,7 @@ jobs:
           echo "### Package(s) published! :gift:" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "#### Published package(s)" >> $GITHUB_STEP_SUMMARY
-          echo ${{needs.prepare-packages.outputs.next-package-urls}} | xargs -n 1 echo >> $GITHUB_STEP_SUMMARY
+          echo '${{needs.prepare-packages.outputs.next-package-urls}}' | xargs -n 1 echo >> $GITHUB_STEP_SUMMARY
 
   upload-distribution:
     runs-on: ubuntu-latest
@@ -182,6 +182,7 @@ jobs:
           npm run --workspace=${{env.DISTRIBUTION_PACKAGE}} build
           echo "::notice title=Uploading distributions::sources_path=${{needs.prepare-packages.outputs.dist-directory}}, target_path=${{ env.AWS_S3_DIRECTORY }}"
           aws s3 cp . s3://${{ env.AWS_S3_BUCKET }}/${{ env.AWS_S3_DIRECTORY }}@${{needs.prepare-packages.outputs.dist-committed-version}}/ --recursive --exclude "*" --include "dist/*" --include "loader/*"
+          aws s3 cp . s3://${{ env.AWS_S3_BUCKET }}/${{ env.AWS_S3_DIRECTORY }}@latest/ --recursive --exclude "*" --include "dist/*" --include "loader/*"
 
       - name: Upload distribution status
         run: |
