@@ -181,8 +181,8 @@ jobs:
           echo "::notice title=Building package::package=${{env.DISTRIBUTION_PACKAGE}}@${{needs.prepare-packages.outputs.dist-committed-version}}"
           npm run --workspace=${{env.DISTRIBUTION_PACKAGE}} build
           echo "::notice title=Uploading distributions::sources_path=${{needs.prepare-packages.outputs.dist-directory}}, target_path=${{ env.AWS_S3_DIRECTORY }}"
-          aws s3 cp . s3://${{ env.AWS_S3_BUCKET }}/${{ env.AWS_S3_DIRECTORY }}@${{needs.prepare-packages.outputs.dist-committed-version}}/ --recursive --exclude "*" --include "dist/*" --include "loader/*"
-          aws s3 cp . s3://${{ env.AWS_S3_BUCKET }}/${{ env.AWS_S3_DIRECTORY }}@latest/ --recursive --exclude "*" --include "dist/*" --include "loader/*"
+          aws s3 cp . s3://${{ env.AWS_S3_BUCKET }}/${{ env.AWS_S3_DIRECTORY }}@${{needs.prepare-packages.outputs.dist-committed-version}}/ --recursive --exclude "*" --include "dist/*" --include "loader/*" --acl bucket-owner-full-control
+          aws s3 cp . s3://${{ env.AWS_S3_BUCKET }}/${{ env.AWS_S3_DIRECTORY }}@latest/ --recursive --exclude "*" --include "dist/*" --include "loader/*" --acl bucket-owner-full-control
 
       - name: Upload distribution status
         run: |
