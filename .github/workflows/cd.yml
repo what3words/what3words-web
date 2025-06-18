@@ -50,7 +50,7 @@ jobs:
           committedVersion=$(jq -r '.["${{vars.DISTRIBUTION_PACKAGE}}"].committedVersion' <<< '${{steps.check-package-versions.outputs.checked-package-versions}}')
           path=$(jq -r '.["${{vars.DISTRIBUTION_PACKAGE}}"].path' <<< '${{steps.check-package-versions.outputs.checked-package-versions}}')
           # we create newline separated raw strings to map iterate with xargs that runs the npm publish command: https://stackoverflow.com/a/50845457
-          packagesToPublish=$(jq -rc 'with_entries(select(.value.isPrerelease=="false")) | keys | join("\n")' <<< '${{steps.check-package-versions.outputs.checked-package-versions}}')
+          packagesToPublish=$(jq -rc 'with_entries(select(.value.isPrerelease=="false")) | keys' <<< '${{steps.check-package-versions.outputs.checked-package-versions}}')
           nextPackageUrls=$(jq -rc '. as $o | with_entries(.key |= "[" + . + "](https://www.npmjs.com/package/" + . + "/v/" + $o[.].committedVersion + ")") | keys | join("\n")' <<< '${{steps.check-package-versions.outputs.checked-package-versions}}')
           canPublish=$([[ "${{steps.check-package-versions.outputs.versions-validated}}" = "true" && -n $packagesToPublish ]] && echo "true" || echo "false")
 
@@ -104,7 +104,7 @@ jobs:
       - name: Publish packages
         id: publish-packages
         run: |
-          echo ${{needs.prepare-packages.outputs.packages-to-publish}} | xargs -n 1 --no-run-if-empty npm publish -w
+          jq -r 'join("\n")' <<< '${{needs.prepare-packages.outputs.packages-to-publish}}' | xargs -n 1 --no-run-if-empty npm publish -w
         env:
           NODE_OPTIONS: "--max_old_space_size=4096"
           NODE_AUTH_TOKEN: ${{ env.NPM_TOKEN }}
