@@ -104,7 +104,7 @@ jobs:
       - name: Publish packages
         id: publish-packages
         run: |
-          jq -r 'join("\n")' <<< ${{needs.prepare-packages.outputs.packages-to-publish}} | xargs -n 1 --no-run-if-empty npm publish -w
+          jq -r 'join("\n")' <<< '${{needs.prepare-packages.outputs.packages-to-publish}}' | xargs -n 1 --no-run-if-empty npm publish -w
         env:
           NODE_OPTIONS: "--max_old_space_size=4096"
           NODE_AUTH_TOKEN: ${{ env.NPM_TOKEN }}
