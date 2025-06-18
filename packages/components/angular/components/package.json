@@ -1,6 +1,6 @@
 {
   "name": "@what3words/angular-components",
-  "version": "5.0.2-alpha.0",
+  "version": "5.0.2",
   "private": false,
   "publishConfig": {
     "access": "public"

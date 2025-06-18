@@ -1,6 +1,6 @@
 {
   "name": "components-playground",
-  "version": "5.0.2-alpha.0",
+  "version": "5.0.2",
   "description": "",
   "main": "index.js",
   "private": true,

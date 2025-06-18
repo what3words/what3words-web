@@ -1,6 +1,6 @@
 {
   "name": "components-map-vue-create-vue",
-  "version": "5.0.2-alpha.0",
+  "version": "5.0.2",
   "private": true,
   "type": "module",
   "scripts": {

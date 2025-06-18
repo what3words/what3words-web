@@ -1,6 +1,6 @@
 {
   "name": "components-autosuggest-static",
-  "version": "5.0.2-alpha.0",
+  "version": "5.0.2",
   "description": "",
   "private": true,
   "main": "index.html",
