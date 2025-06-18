@@ -1,6 +1,6 @@
 {
   "name": "@what3words/vue-components",
-  "version": "5.0.1",
+  "version": "5.0.2",
   "private": false,
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

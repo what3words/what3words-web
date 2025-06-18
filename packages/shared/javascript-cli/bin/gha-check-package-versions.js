@@ -36,7 +36,7 @@ try {
     JSON.stringify(checkedPackageVersions)
   );
   core.setOutput(
-    "can-publish",
+    "versions-validated",
     JSON.stringify(
       isNewVersionArray.every((isNewVersion) => isNewVersion === "true")
     )

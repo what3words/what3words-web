@@ -1,6 +1,6 @@
 {
   "name": "components-autosuggest-angular-19-standalone",
-  "version": "5.0.1",
+  "version": "5.0.2",
   "scripts": {
     "clean": "npx del node_modules .angular",
     "ng": "ng",
