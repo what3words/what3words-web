@@ -88,7 +88,7 @@ Our angular components are currently only `NgModule` compatible. As such, all ex
 #### Installation
 
 ```bash
-npm install @what3words/angular-components@5.0.2
+npm install @what3words/angular-components@5.0.3
 ```
 
 #### Usage
@@ -128,7 +128,7 @@ export class AppComponent {
 #### Installation
 
 ```bash
-npm install @what3words/angular-components@5.0.2
+npm install @what3words/angular-components@5.0.3
 ```
 
 #### Usage
@@ -210,7 +210,7 @@ export class AppComponent {
 #### Installation
 
 ```bash
-npm install @what3words/angular-components@5.0.2
+npm install @what3words/angular-components@5.0.3
 ```
 
 #### Usage
@@ -246,8 +246,8 @@ export class AppComponent {
 
 <!-- begin:meta:build-information -->
 
-##### Last Updated: 17/06/2025
+##### Last Updated: 18/06/2025
 
-##### Version: 5.0.2
+##### Version: 5.0.3
 
 <!-- end:meta:build-information -->

@@ -22,10 +22,12 @@ const TAGS = {
   "what3words-map": "usage:what3words-map",
   "what3words-notes": "usage:what3words-notes",
 };
-const PACKAGE_VERSION = process.env.npm_package_version;
 
-const PLACEHOLDERS = {
-  packageVersion: /<PACKAGE-VERSION>/g,
+const PLACEHOLDERS: Record<string, { regex: RegExp; value: string }> = {
+  packageVersion: {
+    regex: /<PACKAGE-VERSION>/g,
+    value: process.env.npm_package_version || "latest",
+  },
 };
 
 const getDirectiveRegexFromTag = (tag: string) =>
@@ -74,13 +76,13 @@ export function readmeGenerator(docs: JsonDocs) {
       );
 
       sourceUsageContent = sourceUsageContent.replace(/# /g, " "); // downrank headings by one
-      // replace package version placeholder with current semver value
-      if (PACKAGE_VERSION) {
+      // replace placeholders with respective values
+      Object.keys(PLACEHOLDERS).forEach((k) => {
         sourceUsageContent = sourceUsageContent.replace(
-          PLACEHOLDERS.packageVersion,
-          PACKAGE_VERSION
+          PLACEHOLDERS[k].regex,
+          PLACEHOLDERS[k].value
         );
-      }
+      });
 
       const [matchedString, startTag = "", , endTag = ""] = match;
 
@@ -102,7 +104,7 @@ export function readmeGenerator(docs: JsonDocs) {
   const buildInformationDirectiveRegex =
     getDirectiveRegexFromTag(targetDirective);
   const docsTmestamp = new Date(docs.timestamp);
-  const sourceBuildInformationContent = `\n\n##### Last Updated: ${docsTmestamp.toLocaleDateString("en-GB")}\n##### Version: ${PACKAGE_VERSION}`;
+  const sourceBuildInformationContent = `\n\n##### Last Updated: ${docsTmestamp.toLocaleDateString("en-GB")}\n##### Version: ${PLACEHOLDERS.packageVersion.value}`;
 
   Object.entries<Required<DOCS>[FRAMEWORK]>(updatedDocs).forEach(
     ([framework, updatedReadme]) => {
