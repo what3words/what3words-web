@@ -3,6 +3,13 @@ name: Continuous Delivery
 on:
   release:
     types: [published]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Deployment environment"
+        type: environment
+        required: true
+        default: development
 
 jobs:
   prepare-packages:
