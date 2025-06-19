@@ -8,20 +8,18 @@ on:
       environment:
         description: "Deployment environment"
         type: environment
-        required: true
-        default: development
 
 jobs:
   prepare-packages:
     runs-on: ubuntu-latest
     outputs:
-      can-publish: ${{ steps.gate-releases.outputs.can-publish }}
+      can-publish: ${{ steps.gate-releases.outputs.can-publish || inputs.environment != '' }}
       dist-committed-version: ${{ steps.gate-releases.outputs.dist-committed-version }}
       dist-directory: ${{ steps.gate-releases.outputs.dist-directory }}
       dist-is-prerelease: ${{ steps.gate-releases.outputs.dist-is-prerelease }}
       next-package-urls: ${{ steps.gate-releases.outputs.next-package-urls }}
       packages-to-publish: ${{ steps.gate-releases.outputs.packages-to-publish }}
-      versions-validated: ${{ steps.check-package-versions.outputs.versions-validated }}
+      versions-validated: ${{ steps.check-package-versions.outputs.versions-validated || inputs.environment != '' }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -76,8 +74,8 @@ jobs:
   publish-npm:
     runs-on: ubuntu-latest
     needs:
-      - integration-tests
       - prepare-packages
+      - integration-tests
     if: needs.prepare-packages.outputs.versions-validated == 'true' && needs.prepare-packages.outputs.can-publish == 'true'
 
     env:
