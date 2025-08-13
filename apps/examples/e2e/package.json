@@ -16,7 +16,7 @@
   "devDependencies": {
     "@tsconfig/cypress": "^1.0.2",
     "@types/chance": "^1.1.6",
-    "@types/node": "^22.10.2",
+    "@types/node": "^24.2.1",
     "@what3words/javascript-loader": "*",
     "chance": "^1.1.12",
     "cypress": "^13.16.1",

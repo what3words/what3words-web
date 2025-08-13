@@ -97,7 +97,7 @@
     "@types/chance": "^1.1.6",
     "@types/google.maps": "^3.55.12",
     "@types/jest": "^29.5.12",
-    "@types/node": "^20.14.0",
+    "@types/node": "^24.2.1",
     "@types/uuid": "^10.0.0",
     "@what3words/javascript-cli": "*",
     "bundlewatch": "^0.4.0",
