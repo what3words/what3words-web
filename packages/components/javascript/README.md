@@ -299,7 +299,7 @@ npm install @what3words/javascript-components@5.0.3
 
 <!-- begin:meta:build-information -->
 
-##### Last Updated: 18/06/2025
+##### Last Updated: 13/08/2025
 
 ##### Version: 5.0.3
 
