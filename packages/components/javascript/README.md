@@ -75,12 +75,12 @@ If you want to disable the Autosuggest component tag, so that the page does not 
   <script
     type="module"
     defer
-    src="https://cdn.what3words.com/javascript-components@5.0.3/dist/what3words/what3words.esm.js"
+    src="https://cdn.what3words.com/javascript-components@5.0.4/dist/what3words/what3words.esm.js"
   ></script>
   <script
     nomodule
     defer
-    src="https://cdn.what3words.com/javascript-components@5.0.3/dist/what3words/what3words.js"
+    src="https://cdn.what3words.com/javascript-components@5.0.4/dist/what3words/what3words.js"
   ></script>
   ...
 </head>
@@ -90,7 +90,7 @@ If you want to disable the Autosuggest component tag, so that the page does not 
 ##### NPM
 
 ```bash
-npm install @what3words/javascript-components@5.0.3
+npm install @what3words/javascript-components@5.0.4
 ```
 
 #### Usage
@@ -122,12 +122,12 @@ npm install @what3words/javascript-components@5.0.3
   <script
     type="module"
     defer
-    src="https://cdn.what3words.com/javascript-components@5.0.3/dist/what3words/what3words.esm.js"
+    src="https://cdn.what3words.com/javascript-components@5.0.4/dist/what3words/what3words.esm.js"
   ></script>
   <script
     nomodule
     defer
-    src="https://cdn.what3words.com/javascript-components@5.0.3/dist/what3words/what3words.js"
+    src="https://cdn.what3words.com/javascript-components@5.0.4/dist/what3words/what3words.js"
   ></script>
   ...
 </head>
@@ -137,7 +137,7 @@ npm install @what3words/javascript-components@5.0.3
 ##### NPM
 
 ```bash
-npm install @what3words/javascript-components@5.0.3
+npm install @what3words/javascript-components@5.0.4
 ```
 
 #### Usage
@@ -213,12 +213,12 @@ npm install @what3words/javascript-components@5.0.3
   <script
     type="module"
     defer
-    src="https://cdn.what3words.com/javascript-components@5.0.3/dist/what3words/what3words.esm.js"
+    src="https://cdn.what3words.com/javascript-components@5.0.4/dist/what3words/what3words.esm.js"
   ></script>
   <script
     nomodule
     defer
-    src="https://cdn.what3words.com/javascript-components@5.0.3/dist/what3words/what3words.js"
+    src="https://cdn.what3words.com/javascript-components@5.0.4/dist/what3words/what3words.js"
   ></script>
   ...
 </head>
@@ -228,7 +228,7 @@ npm install @what3words/javascript-components@5.0.3
 ##### NPM
 
 ```bash
-npm install @what3words/javascript-components@5.0.3
+npm install @what3words/javascript-components@5.0.4
 ```
 
 #### Usage
@@ -301,6 +301,6 @@ npm install @what3words/javascript-components@5.0.3
 
 ##### Last Updated: 13/08/2025
 
-##### Version: 5.0.3
+##### Version: 5.0.4
 
 <!-- end:meta:build-information -->

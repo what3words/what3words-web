@@ -1,6 +1,6 @@
 {
   "name": "components-map-angular-ng-module",
-  "version": "5.0.3",
+  "version": "5.0.4",
   "scripts": {
     "clean": "npx del node_modules .angular",
     "ng": "ng",
