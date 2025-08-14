@@ -16,7 +16,7 @@
     "@angular/core": "^19.1.0",
     "@angular/forms": "^19.1.0",
     "@angular/platform-browser": "^19.1.0",
-    "@angular/platform-browser-dynamic": "^19.1.0",
+    "@angular/platform-browser-dynamic": "^20.1.7",
     "@angular/router": "^19.1.0",
     "@what3words/angular-components": "*",
     "@what3words/javascript-components": "*",

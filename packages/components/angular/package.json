@@ -18,7 +18,7 @@
     "@angular/core": "^18.1.2",
     "@angular/forms": "^18.1.2",
     "@angular/platform-browser": "^18.1.2",
-    "@angular/platform-browser-dynamic": "^18.1.2",
+    "@angular/platform-browser-dynamic": "^20.1.7",
     "@angular/router": "^18.1.2",
     "@what3words/javascript-components": "*",
     "rxjs": "~7.8.0",
