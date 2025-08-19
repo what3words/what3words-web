@@ -21,7 +21,7 @@
     "@what3words/angular-components": "*",
     "@what3words/javascript-components": "*",
     "@what3words/javascript-loader": "*",
-    "rxjs": "~7.8.0",
+    "rxjs": "~7.8.2",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
   },
