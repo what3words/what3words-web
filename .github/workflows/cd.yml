@@ -157,7 +157,7 @@ jobs:
           node-version-file: .tool-versions
 
       - name: Setup AWS-SDK
-        uses: aws-actions/configure-aws-credentials@v4
+        uses: aws-actions/configure-aws-credentials@v5
         with:
           aws-region: ${{ env.AWS_REGION }}
           role-to-assume: ${{ env.AWS_IAM_ROLE }}
