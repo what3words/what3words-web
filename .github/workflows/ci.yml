@@ -160,7 +160,7 @@ jobs:
           CYPRESS_SCREENSHOTS_FOLDER: cypress/screenshots/e2e/${{ matrix.application }}
 
       - name: Upload cypress artifacts (cy:${{ matrix.spec }}-${{ matrix.application }})
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         if: failure()
         with:
           name: cypress-screenshots-${{ matrix.spec }}-${{ matrix.application }}
