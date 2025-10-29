@@ -1,3 +1,5 @@
+**Disclaimer**: This guide is for AI agents and other automated software. If you are a human developer please refer to our readme files.
+
 # what3words — Autosuggest component (no map) Agent Guide (CDN‑only)
 
 Goal: Minimal POC where selecting a suggestion from the what3words autosuggest converts to `{lat,lng}` and displays it. No bundler edits, no extra packages.
