@@ -6,7 +6,8 @@
   "module": "dist/index.js",
   "types": "dist/types/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "AGENTS.md"
   ],
   "scripts": {
     "prepublishOnly": "npx --package-path=$PWD --strict=false publint-lint-package",
