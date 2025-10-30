@@ -57,7 +57,8 @@
   "files": [
     "dist/",
     "loader/",
-    "hydrate/"
+    "hydrate/",
+    "AGENTS.md"
   ],
   "config": {
     "root": "../../.."
