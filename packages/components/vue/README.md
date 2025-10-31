@@ -32,7 +32,7 @@ export default defineConfig({
 #### Installation
 
 ```bash
-npm install @what3words/vue-components@5.0.4
+npm install @what3words/vue-components@5.0.5
 ```
 
 #### Usage
@@ -106,7 +106,7 @@ export default {
 #### Installation
 
 ```bash
-npm install @what3words/vue-components@5.0.4
+npm install @what3words/vue-components@5.0.5
 ```
 
 #### Usage
@@ -219,7 +219,7 @@ body {
 #### Installation
 
 ```bash
-npm install @what3words/vue-components@5.0.4
+npm install @what3words/vue-components@5.0.5
 ```
 
 #### Usage
@@ -276,8 +276,8 @@ export default {
 
 <!-- begin:meta:build-information -->
 
-##### Last Updated: 13/08/2025
+##### Last Updated: 31/10/2025
 
-##### Version: 5.0.4
+##### Version: 5.0.5
 
 <!-- end:meta:build-information -->
