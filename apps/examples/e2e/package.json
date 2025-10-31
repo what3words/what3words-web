@@ -1,6 +1,6 @@
 {
   "name": "examples-e2e",
-  "version": "5.0.4",
+  "version": "5.0.5",
   "private": "true",
   "description": "Test harness for what3Words web-components apps",
   "scripts": {

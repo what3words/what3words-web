@@ -32,7 +32,7 @@ export default defineConfig({
 #### Installation
 
 ```bash
-npm install @what3words/react-components@5.0.4
+npm install @what3words/react-components@5.0.5
 ```
 
 #### Usage
@@ -64,7 +64,7 @@ export default function Autosuggest() {
 #### Installation
 
 ```bash
-npm install @what3words/react-components@5.0.4
+npm install @what3words/react-components@5.0.5
 ```
 
 #### Usage
@@ -120,7 +120,7 @@ export default function Map() {
 #### Installation
 
 ```bash
-npm install @what3words/react-components@5.0.4
+npm install @what3words/react-components@5.0.5
 ```
 
 #### Usage
@@ -150,8 +150,8 @@ export default function Notes() {
 
 <!-- begin:meta:build-information -->
 
-##### Last Updated: 13/08/2025
+##### Last Updated: 31/10/2025
 
-##### Version: 5.0.4
+##### Version: 5.0.5
 
 <!-- end:meta:build-information -->

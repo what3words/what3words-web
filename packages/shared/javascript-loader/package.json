@@ -1,6 +1,6 @@
 {
   "name": "@what3words/javascript-loader",
-  "version": "5.0.4",
+  "version": "5.0.5",
   "description": "",
   "private": true,
   "main": "./dist/index.js",
